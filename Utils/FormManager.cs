@@ -95,7 +95,7 @@ public static class FormManager
         _formAtual = new T();
         _formAtual.TopLevel = false;
         _formAtual.FormBorderStyle = FormBorderStyle.None;
-        _formAtual.Dock = DockStyle.None;
+        _formAtual.Dock = DockStyle.Fill;
         painel.Controls.Add(_formAtual);
         _formAtual.Show();
     }

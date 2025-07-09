@@ -7,13 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Acessos.Security;
 using Bunifu.UI.WinForms;
 using Telerik.WinControls;
 
 namespace Acessos.Usuarios
 {
-    public partial class Usuariosfrm : Form
+    public partial class Usuariosfrm : Telerik.WinControls.UI.RadForm
     {
 
         private int usuarioSelecionadoId = 0; // Campo para guardar o ID do usuário selecionado
@@ -31,6 +30,40 @@ namespace Acessos.Usuarios
 
             GridUsuarios.DataSource = usuarios;
         }
+        private void GridUsuarios_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            var grid = sender as DataGridView;
+            if (grid.Columns[e.ColumnIndex].Name == "Situacao" && e.Value != null)
+            {
+                string status = e.Value.ToString().ToLower();
+
+                // Define a cor de fundo da célula conforme o status
+                switch (status)
+                {
+                    case "Normal":
+                        e.CellStyle.BackColor = Color.LightGreen;
+                        e.CellStyle.ForeColor = Color.Black;
+                        break;
+                    case "Bloqueado":
+                        e.CellStyle.BackColor = Color.IndianRed;
+                        e.CellStyle.ForeColor = Color.White;
+                        break;
+                    case "Inativo":
+                        e.CellStyle.BackColor = Color.LightGray;
+                        e.CellStyle.ForeColor = Color.Black;
+                        break;
+                    case "Suspenso":
+                        e.CellStyle.BackColor = Color.Gold;
+                        e.CellStyle.ForeColor = Color.Black;
+                        break;
+                    default:
+                        e.CellStyle.BackColor = Color.White;
+                        e.CellStyle.ForeColor = Color.Black;
+                        break;
+                }
+            }
+        }
+
         public void ConfigurarGrid(Bunifu.UI.WinForms.BunifuDataGridView grid)
         {
             grid.Columns.Clear();
@@ -92,7 +125,7 @@ namespace Acessos.Usuarios
             grid.Columns.Add(new DataGridViewTextBoxColumn
             {
                 Name = "DataCriacao",
-                HeaderText = "Data de Criação",
+                HeaderText = "Criação",
                 DataPropertyName = "DataCriacao",
                 Width = 130,
                 ReadOnly = true,
@@ -113,10 +146,21 @@ namespace Acessos.Usuarios
             grid.Columns.Add(new DataGridViewTextBoxColumn
             {
                 Name = "NivelAcesso",
-                HeaderText = "Nível de Acesso",
+                HeaderText = "Nível",
                 DataPropertyName = "NivelAcesso",
                 Width = 80,
                 ReadOnly = true
+            });
+
+            // Coluna: Situacao (Status do usuário)
+            grid.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "Situacao",
+                HeaderText = "Situação",
+                DataPropertyName = "Situacao",
+                Width = 60,
+                ReadOnly = true,
+                Visible = true
             });
 
             // Configurações visuais recomendadas
@@ -179,37 +223,36 @@ namespace Acessos.Usuarios
                 cbCargo.SelectedIndex == -1 ||
                 cbNivel.SelectedIndex == -1)
             {
-                RadMessageBox.Show("Preencha todos os campos obrigatórios!", "Atenção", MessageBoxButtons.OK,RadMessageIcon.Info);
+                RadMessageBox.Show("Preencha todos os campos obrigatórios!", "Atenção", MessageBoxButtons.OK, RadMessageIcon.Info);
+                return;
+            }
+
+            var usuarioDAL = new Usuario("Admin");
+            if (usuarioDAL.UsuarioExiste(txtNome.Text, txtEmail.Text))
+            {
+                RadMessageBox.Show("Já existe um usuário com este nome ou e-mail.", "Atenção", MessageBoxButtons.OK, RadMessageIcon.Error);
                 return;
             }
 
             // Cria o objeto usuário
-            if (chkAtivo.Checked == true)
-            {
-                status = true;
-            }
-            else
-            {
-                status = false;
-            }
+            bool status = chkAtivo.Checked;
             var usuario = new Usuario
             {
                 Nome = txtNome.Text,
                 Email = txtEmail.Text,
                 Senha = HashSenhaManager.CriarHash(txtSenha.Text),
                 Cargo = cbCargo.SelectedItem.ToString(),
-                DataCriacao = DateTime.Now,
+                //DataCriacao = DateTime.Now,
                 Ativo = status,
                 NivelAcesso = Convert.ToInt32(cbNivel.SelectedItem),
-                UsuarioAplicacao = SessaoUsuario.UsuarioAtual?.Nome ?? "Sistema" // Nome do usuário atual ou "Sistema" se não houver
+                UsuarioAplicacao = SessaoUsuario.UsuarioAtual?.Nome ?? "Sistema"
             };
 
-
-            var usuarioDAL = new Usuario("Admin");
             usuarioDAL.InserirUsuario(usuario);
 
-            RadMessageBox.Show("Usuário salvo com sucesso!", "Sucesso", MessageBoxButtons.OK,RadMessageIcon.Info);
+            RadMessageBox.Show("Usuário salvo com sucesso!", "Sucesso", MessageBoxButtons.OK, RadMessageIcon.Info);
             limparCampos();
+
             // Atualize o grid
             var usuarios = usuarioDAL.ConsultarUsuarios();
             GridUsuarios.DataSource = usuarios;
@@ -220,7 +263,6 @@ namespace Acessos.Usuarios
         {
             if (string.IsNullOrWhiteSpace(txtNome.Text) ||
                 string.IsNullOrWhiteSpace(txtEmail.Text) ||
-                string.IsNullOrWhiteSpace(txtSenha.Text) ||
                 cbCargo.SelectedIndex == -1 ||
                 cbNivel.SelectedIndex == -1)
             {
@@ -229,30 +271,54 @@ namespace Acessos.Usuarios
             }
 
             int usuarioId = usuarioSelecionadoId;
+            if (usuarioId == 0)
+            {
+                MessageBox.Show("Selecione um usuário para atualizar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
             var usuarioDAL = new Usuario("Admin");
-            if (chkAtivo.Checked == true)
+            bool status = chkAtivo.Checked;
+
+            // 1. Busque o usuário atual do banco
+            var usuarioAtual = usuarioDAL.ConsultarUsuarios()
+                .FirstOrDefault(u => u.UsuarioID == usuarioId);
+
+            if (usuarioAtual == null)
             {
-                status = true;
+                MessageBox.Show("Usuário não encontrado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            string senhaParaAtualizar;
+
+            // 2. Verifica se o campo senha foi alterado
+            if (!string.IsNullOrWhiteSpace(txtSenha.Text) &&
+                !HashSenhaManager.VerificarSenha(txtSenha.Text, usuarioAtual.Senha))
+            {
+                // Senha digitada é diferente da atual: aplica hash novo
+                senhaParaAtualizar = HashSenhaManager.CriarHash(txtSenha.Text);
             }
             else
             {
-                status = false;
+                // Senha não foi alterada: mantém a senha atual (hash já existente)
+                senhaParaAtualizar = usuarioAtual.Senha;
             }
+
             usuarioDAL.AtualizarUsuario(
                 usuarioId,
                 txtNome.Text,
                 txtEmail.Text,
-                txtSenha.Text,
+                senhaParaAtualizar,
                 cbCargo.SelectedItem.ToString(),
                 status,
                 Convert.ToInt32(cbNivel.SelectedItem),
                 "Atualização por " + (SessaoUsuario.UsuarioAtual?.Nome ?? "Sistema")
             );
-            //string nome, string email, string senha, string cargo,bool ativo, int nivelacesso, string usuarioaplicacao)
 
             MessageBox.Show("Usuário atualizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             limparCampos();
+
             // Atualize o grid
             var usuarios = usuarioDAL.ConsultarUsuarios();
             GridUsuarios.DataSource = usuarios;
@@ -302,17 +368,15 @@ namespace Acessos.Usuarios
                 MessageBox.Show("Selecione um usuário para desbloquear.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
             // Pegue o ID do usuário selecionado
             int usuarioId = Convert.ToInt32(GridUsuarios.SelectedRows[0].Cells["UsuarioID"].Value);
-
-            // Chame o método para ativar o usuário
-            var usuario = new UsuarioStatus("Admin");
-            usuario.AtivarUsuario(usuarioId);
-
-            MessageBox.Show("Usuário desbloqueado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            //"INSERT INTO usuarioStatus (UsuarioID, Situacao, DataStatus, AcessoLiberacao, NivelLiberacao) VALUES (@UsuarioID, 'Ativo', @DataStatus, 1, 1)", conn))
+            if (usuarioId < 0)
+            {
+                MessageBox.Show("Selecione um usuário válido.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            // Crie uma instância do UsuarioStatus
+            FormManager.ShowForm<UsuarioStatusfrm>(usuarioId);
         }
 
     }

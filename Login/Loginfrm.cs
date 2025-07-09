@@ -8,7 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Acessos.Security;
 using Bunifu.UI.WinForms;
 using Telerik.WinControls;
 
@@ -60,7 +59,7 @@ namespace Acessos
                     await cmd.ExecuteNonQueryAsync();
                 }
             }
-        }
+        }              
 
         private async void btLogar_Click(object sender, EventArgs e)
         {
@@ -71,7 +70,7 @@ namespace Acessos
                 return;
             }
 
-            // 2. Exibe loader e desabilita botão
+            // 2. Loader visual e desabilita botão
             Loader.Visible = true;
             btLogar.Enabled = false;
 
@@ -79,12 +78,13 @@ namespace Acessos
             string senha = txtSenha.Text;
             DataTable dt = null;
 
+            // 3. Consulta ao banco (assíncrono)
             await Task.Run(() => { dt = new Usuario("Admin").ConsultarUsuario(); });
 
             var usuarioEncontrado = dt.AsEnumerable()
                 .FirstOrDefault(row => row.Field<string>("Nome") == nomeUsuario);
 
-            // 3. Carrega status do usuário
+            // 4. Carrega status do usuário
             IUsuarioStatus status = null;
             if (usuarioEncontrado != null)
             {
@@ -92,21 +92,28 @@ namespace Acessos
                 status = new UsuarioStatus("Admin").CarregarStatusUsuario(usuarioId);
             }
 
-            // 4. Checa status antes de validar senha
-            if (status != null && new[] { "Bloqueado", "Inativo", "Suspenso" }.Contains(status.Situacao))
+            // 5. Checa status antes de validar senha
+            if (status == null || !string.Equals(status.Situacao, "Normal", StringComparison.OrdinalIgnoreCase))
             {
                 Loader.Visible = false;
                 btLogar.Enabled = true;
-                RadMessageBox.Show($"Usuário {status.Situacao.ToLower()}. Contate o administrador.", "Acesso negado", MessageBoxButtons.OK, RadMessageIcon.Error);
+                string situacaoMsg = status?.Situacao ?? "Indefinido";
+                RadMessageBox.Show(
+                    $"Usuário com status '{situacaoMsg}'. Contate o administrador.",
+                    "Acesso negado",
+                    MessageBoxButtons.OK,
+                    RadMessageIcon.Error
+                );
                 return;
             }
 
-            // 5. Verifica senha (com suporte à migração)
+            // 6. Verifica senha (com suporte a hash e migração, se necessário)
             bool senhaValida = false;
             if (usuarioEncontrado != null)
             {
                 string hashBanco = usuarioEncontrado.Field<string>("Senha");
 
+                // Se usa hash antigo, migra (ajuste conforme seu padrão)
                 if (HashSenhaMigrador.PrecisaMigrar(hashBanco))
                 {
                     senhaValida = HashSenhaMigrador.ValidarSenhaAntiga(senha, hashBanco);
@@ -123,10 +130,10 @@ namespace Acessos
                 }
             }
 
-            // 6. Login bem-sucedido
+            // 7. Login bem-sucedido
             if (usuarioEncontrado != null && senhaValida && usuarioEncontrado.Field<bool>("Ativo"))
             {
-                loginEfetuado = true;
+                tentativas = 0; // Zera tentativas
 
                 SessaoUsuario.UsuarioAtual = new UsuarioLogado
                 {
@@ -143,6 +150,7 @@ namespace Acessos
                     NivelLiberacao = status?.NivelLiberacao ?? 1
                 };
 
+                // Auditoria de login
                 var auditoriaDAL = new AuditoriaAcesso();
                 auditoriaDAL.InserirAuditoria(new AuditoriaAcesso
                 {
@@ -158,20 +166,53 @@ namespace Acessos
                 Loader.Visible = false;
                 btLogar.Enabled = true;
 
+                loginEfetuado = true;
                 this.DialogResult = DialogResult.OK;
                 this.Close();
                 return;
             }
             else
             {
+                tentativas++;
+
                 Loader.Color = Color.Red;
                 await Task.Delay(200);
                 Loader.Visible = false;
                 btLogar.Enabled = true;
-                RadMessageBox.Show("Usuário ou senha inválidos.", "Erro", MessageBoxButtons.OK, RadMessageIcon.Error);
-                txtSenha.Clear();
-                txtSenha.Focus();
+
+                if (tentativas == 3 && usuarioEncontrado != null)
+                {
+                    // 8. Bloqueia o usuário após 3 tentativas
+                    new UsuarioStatus("Admin").BloquearUsuario(usuarioEncontrado.Field<int>("UsuarioID"));
+
+                    // Auditoria do bloqueio
+                    var auditoriaDAL = new AuditoriaAcesso();
+                    auditoriaDAL.InserirAuditoria(new AuditoriaAcesso
+                    {
+                        UsuarioID = usuarioEncontrado.Field<int>("UsuarioID"),
+                        Acao = "Bloqueio",
+                        DataHora = DateTime.Now,
+                        UsuarioAplicacao = nomeUsuario,
+                        Detalhes = "Usuário bloqueado após 3 tentativas inválidas de login."
+                    });
+
+                    RadMessageBox.Show("Usuário bloqueado após 3 tentativas inválidas. Contate o administrador.", "Acesso bloqueado", MessageBoxButtons.OK, RadMessageIcon.Error);
+
+                    txtNome.Clear();
+                    txtSenha.Clear();
+                    txtNome.Focus();
+                    tentativas = 0;
+                    return;
+                }
+                else
+                {
+                    int restantes = 3 - tentativas;
+                    RadMessageBox.Show($"Usuário ou senha inválidos. Tentativas restantes: {restantes}", "Erro", MessageBoxButtons.OK, RadMessageIcon.Error);
+                    txtSenha.Clear();
+                    txtSenha.Focus();
+                }
             }
         }
+
     }
 }

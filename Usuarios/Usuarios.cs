@@ -22,14 +22,8 @@ namespace Acessos
         public bool Ativo { get; set; }
         public int NivelAcesso { get; set; }
         public   string UsuarioAplicacao { get; set; } // Nome do usuário ou aplicação que está realizando a ação
-        //
-        int UsuarioStatusID { get; set; }     
-        string Situacao { get; set; }          // "Bloqueado", "Inativo", etc.
-        DateTime DataStatus { get; set; }
-        DateTime? DataMod { get; set; }
-        bool AcessoLiberacao { get; set; }
-        int NivelLiberacao { get; set; }
-
+        public string Situacao { get; set; }          // "Bloqueado", "Inativo", etc.
+        public string Detalhes { get; set; } // Detalhes adicionais sobre a situação do usuário
 
         private readonly string _connectionString;
 
@@ -91,16 +85,13 @@ namespace Acessos
             }
         }
 
-        internal DataTable ConsultarUsuario(int? usuarioId = null)
+        internal DataTable ConsultarUsuario(int usuarioId)
         {
             using (SqlConnection conn = new SqlConnection(_connectionString))
-            using (SqlCommand cmd = new SqlCommand("ConsultarUsuario", conn))
+            using (SqlCommand cmd = new SqlCommand("ConsultarUsuarioPorId", conn))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
-                if (usuarioId.HasValue)
-                    cmd.Parameters.AddWithValue("@UsuarioID", usuarioId.Value);
-                else
-                    cmd.Parameters.AddWithValue("@UsuarioID", DBNull.Value);
+                cmd.Parameters.AddWithValue("@UsuarioID", usuarioId);
 
                 using (SqlDataAdapter da = new SqlDataAdapter(cmd))
                 {
@@ -110,6 +101,35 @@ namespace Acessos
                 }
             }
         }
+
+        internal DataTable ConsultarUsuario()
+        {
+            using (SqlConnection conn = new SqlConnection(_connectionString))
+            using (SqlCommand cmd = new SqlCommand("ConsultarUsuario", conn))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                // NÃO adicione nenhum parâmetro aqui!
+                using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+                {
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    return dt;
+                }
+            }
+        }
+       
+        public string CarregarStatusUsuario(int usuarioId)
+        {
+            using (SqlConnection conn = new SqlConnection(_connectionString))
+            using (SqlCommand cmd = new SqlCommand("SELECT TOP 1 Situacao FROM usuarioStatus WHERE UsuarioID = @UsuarioID ORDER BY DataStatus DESC", conn))
+            {
+                cmd.Parameters.AddWithValue("@UsuarioID", usuarioId);
+                conn.Open();
+                var result = cmd.ExecuteScalar();
+                return result?.ToString() ?? "Indefinido";
+            }
+        }      
+
         public List<IUsuario> ConsultarUsuarios()
         {
             var lista = new List<IUsuario>();
@@ -131,7 +151,8 @@ namespace Acessos
                             Cargo = reader["Cargo"].ToString(),
                             DataCriacao = Convert.ToDateTime(reader["DataCriacao"]),
                             Ativo = Convert.ToBoolean(reader["Ativo"]),
-                            NivelAcesso = Convert.ToInt32(reader["NivelAcesso"])
+                            NivelAcesso = Convert.ToInt32(reader["NivelAcesso"]),
+                            Situacao = reader["Situacao"]?.ToString() ?? "Indefinido"
                         };
                         lista.Add(usuario);
                     }
@@ -157,7 +178,7 @@ namespace Acessos
                 conn.Open();
                 cmd.ExecuteNonQuery();
             }
-        }
+        }      
 
         public void InserirStatusUsuario(int usuarioId, string situacao, DateTime dataStatus, DateTime? dataMod, bool acessoLiberacao, int nivelLiberacao)
         {
@@ -195,8 +216,38 @@ namespace Acessos
                     return dt;
                 }
             }
-        }     
+        }
 
+        public bool UsuarioExiste(string nome, string email)
+        {
+            using (SqlConnection conn = new SqlConnection(_connectionString))
+            using (SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Usuario WHERE Nome = @Nome OR Email = @Email", conn))
+            {
+                cmd.Parameters.AddWithValue("@Nome", nome);
+                cmd.Parameters.AddWithValue("@Email", email);
+                conn.Open();
+                int count = (int)cmd.ExecuteScalar();
+                return count > 0;
+            }
+        }
+
+        internal void AtualizarUsuario(Usuario usuario)
+        {
+            using (SqlConnection conn = new SqlConnection(_connectionString))
+            using (SqlCommand cmd = new SqlCommand("UpdateStatus", conn))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@UsuarioID", usuario.UsuarioID);          
+                cmd.Parameters.AddWithValue("@NivelAcesso", usuario.NivelAcesso);
+                cmd.Parameters.AddWithValue("@Situacao", usuario.Situacao);
+                cmd.Parameters.AddWithValue("@UsuarioAplicacao", usuario.UsuarioAplicacao);
+                cmd.Parameters.AddWithValue("@Detalhes", usuario.Detalhes);
+
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+        }
 
     }
 }

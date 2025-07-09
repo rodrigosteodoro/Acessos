@@ -17,6 +17,8 @@ namespace Acessos
         bool Ativo { get; set; }
         int NivelAcesso { get; set; }
         string UsuarioAplicacao { get; set; } // Nome do usuário ou aplicação que está realizando a ação
+        string Situacao { get; set; } // "Bloqueado", "Inativo", etc.
+        string Detalhes { get; set; } // Detalhes adicionais sobre a situação do usuário
     }
     public enum Cargo
     {

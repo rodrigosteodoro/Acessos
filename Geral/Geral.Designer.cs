@@ -35,22 +35,15 @@
             this.bunifuPictureBox1 = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.aquaTheme1 = new Telerik.WinControls.Themes.AquaTheme();
             this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
-            this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
-            this.radButton4 = new Telerik.WinControls.UI.RadButton();
-            this.radButton3 = new Telerik.WinControls.UI.RadButton();
-            this.radButton2 = new Telerik.WinControls.UI.RadButton();
-            this.btUsuarios = new Telerik.WinControls.UI.RadButton();
             this.materialTheme1 = new Telerik.WinControls.Themes.MaterialTheme();
-            this.radNotifyIcon1 = new Telerik.WinControls.UI.RadNotifyIcon();
+            this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
+            this.btUsuarios = new Bunifu.UI.WinForms.BunifuImageButton();
             this.pDashboard = new Bunifu.UI.WinForms.BunifuPanel();
+            this.materialTheme2 = new Telerik.WinControls.Themes.MaterialTheme();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             this.radPanel1.SuspendLayout();
             this.bunifuPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radButton4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radButton3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radButton2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuFormControlBox1
@@ -204,74 +197,64 @@
             this.bunifuPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuPanel1.BackgroundImage")));
             this.bunifuPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bunifuPanel1.BorderColor = System.Drawing.Color.Transparent;
-            this.bunifuPanel1.BorderRadius = 0;
-            this.bunifuPanel1.BorderThickness = 0;
-            this.bunifuPanel1.Controls.Add(this.radButton4);
-            this.bunifuPanel1.Controls.Add(this.radButton3);
-            this.bunifuPanel1.Controls.Add(this.radButton2);
+            this.bunifuPanel1.BorderRadius = 3;
+            this.bunifuPanel1.BorderThickness = 1;
             this.bunifuPanel1.Controls.Add(this.btUsuarios);
             this.bunifuPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.bunifuPanel1.Location = new System.Drawing.Point(0, 52);
-            this.bunifuPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.bunifuPanel1.Name = "bunifuPanel1";
             this.bunifuPanel1.ShowBorders = true;
-            this.bunifuPanel1.Size = new System.Drawing.Size(171, 737);
-            this.bunifuPanel1.TabIndex = 7;
-            // 
-            // radButton4
-            // 
-            this.radButton4.BackColor = System.Drawing.Color.LightBlue;
-            this.radButton4.Location = new System.Drawing.Point(12, 196);
-            this.radButton4.Name = "radButton4";
-            this.radButton4.Size = new System.Drawing.Size(147, 44);
-            this.radButton4.TabIndex = 3;
-            this.radButton4.Text = "radButton4";
-            this.radButton4.ThemeName = "Material";
-            // 
-            // radButton3
-            // 
-            this.radButton3.BackColor = System.Drawing.Color.LightBlue;
-            this.radButton3.Location = new System.Drawing.Point(12, 146);
-            this.radButton3.Name = "radButton3";
-            this.radButton3.Size = new System.Drawing.Size(147, 44);
-            this.radButton3.TabIndex = 2;
-            this.radButton3.Text = "radButton3";
-            this.radButton3.ThemeName = "Material";
-            // 
-            // radButton2
-            // 
-            this.radButton2.BackColor = System.Drawing.Color.LightBlue;
-            this.radButton2.Location = new System.Drawing.Point(12, 96);
-            this.radButton2.Name = "radButton2";
-            this.radButton2.Size = new System.Drawing.Size(147, 44);
-            this.radButton2.TabIndex = 1;
-            this.radButton2.Text = "radButton2";
-            this.radButton2.ThemeName = "Material";
+            this.bunifuPanel1.Size = new System.Drawing.Size(108, 737);
+            this.bunifuPanel1.TabIndex = 2;
             // 
             // btUsuarios
             // 
-            this.btUsuarios.BackColor = System.Drawing.Color.LightBlue;
-            this.btUsuarios.Location = new System.Drawing.Point(12, 46);
+            this.btUsuarios.ActiveImage = null;
+            this.btUsuarios.AllowAnimations = true;
+            this.btUsuarios.AllowBuffering = false;
+            this.btUsuarios.AllowToggling = false;
+            this.btUsuarios.AllowZooming = true;
+            this.btUsuarios.AllowZoomingOnFocus = false;
+            this.btUsuarios.BackColor = System.Drawing.Color.Transparent;
+            this.btUsuarios.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btUsuarios.ErrorImage = ((System.Drawing.Image)(resources.GetObject("btUsuarios.ErrorImage")));
+            this.btUsuarios.FadeWhenInactive = false;
+            this.btUsuarios.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
+            this.btUsuarios.Image = ((System.Drawing.Image)(resources.GetObject("btUsuarios.Image")));
+            this.btUsuarios.ImageActive = null;
+            this.btUsuarios.ImageLocation = null;
+            this.btUsuarios.ImageMargin = 1;
+            this.btUsuarios.ImageSize = new System.Drawing.Size(94, 88);
+            this.btUsuarios.ImageZoomSize = new System.Drawing.Size(95, 89);
+            this.btUsuarios.InitialImage = ((System.Drawing.Image)(resources.GetObject("btUsuarios.InitialImage")));
+            this.btUsuarios.Location = new System.Drawing.Point(7, 6);
             this.btUsuarios.Name = "btUsuarios";
-            this.btUsuarios.Size = new System.Drawing.Size(147, 44);
-            this.btUsuarios.TabIndex = 0;
-            this.btUsuarios.Text = "Usuarios";
-            this.btUsuarios.ThemeName = "Material";
+            this.btUsuarios.Rotation = 0;
+            this.btUsuarios.ShowActiveImage = true;
+            this.btUsuarios.ShowCursorChanges = true;
+            this.btUsuarios.ShowImageBorders = false;
+            this.btUsuarios.ShowSizeMarkers = false;
+            this.btUsuarios.Size = new System.Drawing.Size(95, 89);
+            this.btUsuarios.TabIndex = 1;
+            this.btUsuarios.ToolTipText = "Contas de usuários";
+            this.btUsuarios.WaitOnLoad = false;
+            this.btUsuarios.Zoom = 1;
+            this.btUsuarios.ZoomSpeed = 10;
             this.btUsuarios.Click += new System.EventHandler(this.bt1_Click);
             // 
             // pDashboard
             // 
-            this.pDashboard.BackgroundColor = System.Drawing.Color.Transparent;
+            this.pDashboard.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.pDashboard.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pDashboard.BackgroundImage")));
             this.pDashboard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pDashboard.BorderColor = System.Drawing.Color.Transparent;
             this.pDashboard.BorderRadius = 3;
             this.pDashboard.BorderThickness = 1;
             this.pDashboard.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pDashboard.Location = new System.Drawing.Point(171, 52);
+            this.pDashboard.Location = new System.Drawing.Point(108, 52);
             this.pDashboard.Name = "pDashboard";
-            this.pDashboard.ShowBorders = true;
-            this.pDashboard.Size = new System.Drawing.Size(1021, 737);
+            this.pDashboard.ShowBorders = false;
+            this.pDashboard.Size = new System.Drawing.Size(1084, 737);
             this.pDashboard.TabIndex = 10;
             // 
             // Geral
@@ -300,10 +283,6 @@
             this.radPanel1.ResumeLayout(false);
             this.radPanel1.PerformLayout();
             this.bunifuPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.radButton4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radButton3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radButton2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btUsuarios)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -316,13 +295,10 @@
         private Bunifu.UI.WinForms.BunifuPictureBox bunifuPictureBox1;
         private Telerik.WinControls.Themes.AquaTheme aquaTheme1;
         private Telerik.WinControls.UI.RadPanel radPanel1;
-        private Bunifu.UI.WinForms.BunifuPanel bunifuPanel1;
-        private Telerik.WinControls.UI.RadButton radButton4;
-        private Telerik.WinControls.UI.RadButton radButton3;
-        private Telerik.WinControls.UI.RadButton radButton2;
-        private Telerik.WinControls.UI.RadButton btUsuarios;
         private Telerik.WinControls.Themes.MaterialTheme materialTheme1;
-        private Telerik.WinControls.UI.RadNotifyIcon radNotifyIcon1;
+        private Bunifu.UI.WinForms.BunifuImageButton btUsuarios;
+        private Bunifu.UI.WinForms.BunifuPanel bunifuPanel1;
         private Bunifu.UI.WinForms.BunifuPanel pDashboard;
+        private Telerik.WinControls.Themes.MaterialTheme materialTheme2;
     }
 }
