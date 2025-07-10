@@ -118,7 +118,12 @@ namespace Acessos
       
         private void bt1_Click(object sender, EventArgs e)
         {
-            FormManager.AlternarFormNoPainel<Usuariosfrm>(pDashboard);            
+            FormManager.ShowForm<Usuariosfrm>();            
+        }
+
+        private void btFornecedores_Click(object sender, EventArgs e) 
+        {
+            FormManager.ShowForm<frmFornecedores>();
         }
     }
 }

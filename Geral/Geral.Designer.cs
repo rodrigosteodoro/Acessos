@@ -40,6 +40,7 @@
             this.btUsuarios = new Bunifu.UI.WinForms.BunifuImageButton();
             this.pDashboard = new Bunifu.UI.WinForms.BunifuPanel();
             this.materialTheme2 = new Telerik.WinControls.Themes.MaterialTheme();
+            this.btFornecedores = new Bunifu.UI.WinForms.BunifuImageButton();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             this.radPanel1.SuspendLayout();
@@ -153,7 +154,7 @@
             this.lbusuario.CursorType = System.Windows.Forms.Cursors.Default;
             this.lbusuario.Font = new System.Drawing.Font("Book Antiqua", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbusuario.ForeColor = System.Drawing.Color.Gold;
-            this.lbusuario.Location = new System.Drawing.Point(52, 12);
+            this.lbusuario.Location = new System.Drawing.Point(80, 12);
             this.lbusuario.Name = "lbusuario";
             this.lbusuario.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lbusuario.Size = new System.Drawing.Size(110, 20);
@@ -165,7 +166,6 @@
             // bunifuPictureBox1
             // 
             this.bunifuPictureBox1.AllowFocused = false;
-            this.bunifuPictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.bunifuPictureBox1.AutoSizeHeight = false;
             this.bunifuPictureBox1.BorderRadius = 0;
             this.bunifuPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuPictureBox1.Image")));
@@ -199,12 +199,13 @@
             this.bunifuPanel1.BorderColor = System.Drawing.Color.Transparent;
             this.bunifuPanel1.BorderRadius = 3;
             this.bunifuPanel1.BorderThickness = 1;
+            this.bunifuPanel1.Controls.Add(this.btFornecedores);
             this.bunifuPanel1.Controls.Add(this.btUsuarios);
             this.bunifuPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.bunifuPanel1.Location = new System.Drawing.Point(0, 52);
             this.bunifuPanel1.Name = "bunifuPanel1";
             this.bunifuPanel1.ShowBorders = true;
-            this.bunifuPanel1.Size = new System.Drawing.Size(108, 737);
+            this.bunifuPanel1.Size = new System.Drawing.Size(119, 737);
             this.bunifuPanel1.TabIndex = 2;
             // 
             // btUsuarios
@@ -251,11 +252,47 @@
             this.pDashboard.BorderRadius = 3;
             this.pDashboard.BorderThickness = 1;
             this.pDashboard.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pDashboard.Location = new System.Drawing.Point(108, 52);
+            this.pDashboard.Location = new System.Drawing.Point(119, 52);
             this.pDashboard.Name = "pDashboard";
             this.pDashboard.ShowBorders = false;
-            this.pDashboard.Size = new System.Drawing.Size(1084, 737);
+            this.pDashboard.Size = new System.Drawing.Size(1073, 737);
             this.pDashboard.TabIndex = 10;
+            // 
+            // btFornecedores
+            // 
+            this.btFornecedores.ActiveImage = null;
+            this.btFornecedores.AllowAnimations = true;
+            this.btFornecedores.AllowBuffering = false;
+            this.btFornecedores.AllowToggling = false;
+            this.btFornecedores.AllowZooming = true;
+            this.btFornecedores.AllowZoomingOnFocus = false;
+            this.btFornecedores.BackColor = System.Drawing.Color.Transparent;
+            this.btFornecedores.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btFornecedores.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btFornecedores.ErrorImage = ((System.Drawing.Image)(resources.GetObject("btFornecedores.ErrorImage")));
+            this.btFornecedores.FadeWhenInactive = false;
+            this.btFornecedores.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
+            this.btFornecedores.Image = ((System.Drawing.Image)(resources.GetObject("btFornecedores.Image")));
+            this.btFornecedores.ImageActive = null;
+            this.btFornecedores.ImageLocation = null;
+            this.btFornecedores.ImageMargin = 1;
+            this.btFornecedores.ImageSize = new System.Drawing.Size(89, 79);
+            this.btFornecedores.ImageZoomSize = new System.Drawing.Size(90, 80);
+            this.btFornecedores.InitialImage = ((System.Drawing.Image)(resources.GetObject("btFornecedores.InitialImage")));
+            this.btFornecedores.Location = new System.Drawing.Point(12, 101);
+            this.btFornecedores.Name = "btFornecedores";
+            this.btFornecedores.Rotation = 0;
+            this.btFornecedores.ShowActiveImage = true;
+            this.btFornecedores.ShowCursorChanges = true;
+            this.btFornecedores.ShowImageBorders = false;
+            this.btFornecedores.ShowSizeMarkers = false;
+            this.btFornecedores.Size = new System.Drawing.Size(90, 80);
+            this.btFornecedores.TabIndex = 2;
+            this.btFornecedores.ToolTipText = "Fornecedores";
+            this.btFornecedores.WaitOnLoad = false;
+            this.btFornecedores.Zoom = 1;
+            this.btFornecedores.ZoomSpeed = 10;
+            this.btFornecedores.Click += new System.EventHandler(this.btFornecedores_Click);
             // 
             // Geral
             // 
@@ -300,5 +337,6 @@
         private Bunifu.UI.WinForms.BunifuPanel bunifuPanel1;
         private Bunifu.UI.WinForms.BunifuPanel pDashboard;
         private Telerik.WinControls.Themes.MaterialTheme materialTheme2;
+        private Bunifu.UI.WinForms.BunifuImageButton btFornecedores;
     }
 }
