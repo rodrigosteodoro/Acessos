@@ -12,6 +12,21 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -22,6 +37,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,6 +48,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Acessos.Program</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.AnalysisServices.AdomdClient, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="Microsoft.Toolkit.Uwp.Notifications, Version=7.0.0.0, Culture=neutral, PublicKeyToken=4aff67a105548ee2" />
@@ -40,6 +59,7 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -68,14 +88,30 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Estoque\Fornecedores\Fornecedor.cs" />
-    <Compile Include="Estoque\Fornecedores\IFornecedores.cs" />
-    <Compile Include="Estoque\Fornecedores\frmFornecedores.cs">
+    <Compile Include="Fornecedores\Fornecedor.cs" />
+    <Compile Include="Fornecedores\IFornecedores.cs" />
+    <Compile Include="Fornecedores\frmFornecedores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Estoque\Fornecedores\frmFornecedores.Designer.cs">
+    <Compile Include="Fornecedores\frmFornecedores.Designer.cs">
       <DependentUpon>frmFornecedores.cs</DependentUpon>
     </Compile>
+    <Compile Include="Produtos\frmEdicaoP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produtos\frmEdicaoP.Designer.cs">
+      <DependentUpon>frmEdicaoP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Produtos\frmProdutos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produtos\frmProdutos.Designer.cs">
+      <DependentUpon>frmProdutos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Produtos\IProdutos.cs" />
+    <Compile Include="Produtos\ProdutoDAL.cs" />
+    <Compile Include="Produtos\ProdutoRepository.cs" />
+    <Compile Include="Produtos\Produtos.cs" />
     <Compile Include="Usuarios\UsuarioStatusfrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,7 +138,7 @@
     <Compile Include="Login\Loginfrm.Designer.cs">
       <DependentUpon>Loginfrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Geral\Program.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Usuarios\Usuarios.cs" />
     <Compile Include="Usuarios\Usuariosfrm.cs">
@@ -112,8 +148,14 @@
       <DependentUpon>Usuariosfrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils\Validador.cs" />
-    <EmbeddedResource Include="Estoque\Fornecedores\frmFornecedores.resx">
+    <EmbeddedResource Include="Fornecedores\frmFornecedores.resx">
       <DependentUpon>frmFornecedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produtos\frmEdicaoP.resx">
+      <DependentUpon>frmEdicaoP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produtos\frmProdutos.resx">
+      <DependentUpon>frmProdutos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Geral\Geral.resx">
       <DependentUpon>Geral.cs</DependentUpon>
@@ -147,13 +189,27 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Utils\App.config" />
+    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Bunifu.UI.WinForms">
       <Version>8.0.0</Version>
     </PackageReference>
+    <PackageReference Include="Dapper">
+      <Version>2.1.66</Version>
+    </PackageReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 e x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

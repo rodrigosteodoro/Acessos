@@ -39,6 +39,7 @@ namespace Acessos.Usuarios
         private System.Windows.Forms.Label lblCargo;
         private System.Windows.Forms.Label lblNivel;
 
+        [System.Obsolete]
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();

@@ -125,5 +125,12 @@ namespace Acessos
         {
             FormManager.ShowForm<frmFornecedores>();
         }
+
+        private void btProdutos_Click(object sender, EventArgs e)
+        {
+            var FormProdutos = new frmProdutos();
+            FormProdutos.ShowDialog();
+            // FormManager.ShowForm<frmProdutos>();
+        }
     }
 }

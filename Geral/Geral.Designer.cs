@@ -26,6 +26,7 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
+        [System.Obsolete]
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Geral));
@@ -37,10 +38,11 @@
             this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
             this.materialTheme1 = new Telerik.WinControls.Themes.MaterialTheme();
             this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
+            this.btProdutos = new Bunifu.UI.WinForms.BunifuImageButton();
+            this.btFornecedores = new Bunifu.UI.WinForms.BunifuImageButton();
             this.btUsuarios = new Bunifu.UI.WinForms.BunifuImageButton();
             this.pDashboard = new Bunifu.UI.WinForms.BunifuPanel();
             this.materialTheme2 = new Telerik.WinControls.Themes.MaterialTheme();
-            this.btFornecedores = new Bunifu.UI.WinForms.BunifuImageButton();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             this.radPanel1.SuspendLayout();
@@ -166,6 +168,7 @@
             // bunifuPictureBox1
             // 
             this.bunifuPictureBox1.AllowFocused = false;
+            this.bunifuPictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.bunifuPictureBox1.AutoSizeHeight = false;
             this.bunifuPictureBox1.BorderRadius = 0;
             this.bunifuPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuPictureBox1.Image")));
@@ -199,6 +202,7 @@
             this.bunifuPanel1.BorderColor = System.Drawing.Color.Transparent;
             this.bunifuPanel1.BorderRadius = 3;
             this.bunifuPanel1.BorderThickness = 1;
+            this.bunifuPanel1.Controls.Add(this.btProdutos);
             this.bunifuPanel1.Controls.Add(this.btFornecedores);
             this.bunifuPanel1.Controls.Add(this.btUsuarios);
             this.bunifuPanel1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -207,6 +211,78 @@
             this.bunifuPanel1.ShowBorders = true;
             this.bunifuPanel1.Size = new System.Drawing.Size(119, 737);
             this.bunifuPanel1.TabIndex = 2;
+            // 
+            // btProdutos
+            // 
+            this.btProdutos.ActiveImage = null;
+            this.btProdutos.AllowAnimations = true;
+            this.btProdutos.AllowBuffering = false;
+            this.btProdutos.AllowToggling = false;
+            this.btProdutos.AllowZooming = true;
+            this.btProdutos.AllowZoomingOnFocus = false;
+            this.btProdutos.BackColor = System.Drawing.Color.Transparent;
+            this.btProdutos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btProdutos.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btProdutos.ErrorImage = ((System.Drawing.Image)(resources.GetObject("btProdutos.ErrorImage")));
+            this.btProdutos.FadeWhenInactive = false;
+            this.btProdutos.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
+            this.btProdutos.Image = ((System.Drawing.Image)(resources.GetObject("btProdutos.Image")));
+            this.btProdutos.ImageActive = null;
+            this.btProdutos.ImageLocation = null;
+            this.btProdutos.ImageMargin = 1;
+            this.btProdutos.ImageSize = new System.Drawing.Size(89, 79);
+            this.btProdutos.ImageZoomSize = new System.Drawing.Size(90, 80);
+            this.btProdutos.InitialImage = ((System.Drawing.Image)(resources.GetObject("btProdutos.InitialImage")));
+            this.btProdutos.Location = new System.Drawing.Point(12, 187);
+            this.btProdutos.Name = "btProdutos";
+            this.btProdutos.Rotation = 0;
+            this.btProdutos.ShowActiveImage = true;
+            this.btProdutos.ShowCursorChanges = true;
+            this.btProdutos.ShowImageBorders = false;
+            this.btProdutos.ShowSizeMarkers = false;
+            this.btProdutos.Size = new System.Drawing.Size(90, 80);
+            this.btProdutos.TabIndex = 3;
+            this.btProdutos.ToolTipText = "Produtos";
+            this.btProdutos.WaitOnLoad = false;
+            this.btProdutos.Zoom = 1;
+            this.btProdutos.ZoomSpeed = 10;
+            this.btProdutos.Click += new System.EventHandler(this.btProdutos_Click);
+            // 
+            // btFornecedores
+            // 
+            this.btFornecedores.ActiveImage = null;
+            this.btFornecedores.AllowAnimations = true;
+            this.btFornecedores.AllowBuffering = false;
+            this.btFornecedores.AllowToggling = false;
+            this.btFornecedores.AllowZooming = true;
+            this.btFornecedores.AllowZoomingOnFocus = false;
+            this.btFornecedores.BackColor = System.Drawing.Color.Transparent;
+            this.btFornecedores.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btFornecedores.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btFornecedores.ErrorImage = ((System.Drawing.Image)(resources.GetObject("btFornecedores.ErrorImage")));
+            this.btFornecedores.FadeWhenInactive = false;
+            this.btFornecedores.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
+            this.btFornecedores.Image = ((System.Drawing.Image)(resources.GetObject("btFornecedores.Image")));
+            this.btFornecedores.ImageActive = null;
+            this.btFornecedores.ImageLocation = null;
+            this.btFornecedores.ImageMargin = 1;
+            this.btFornecedores.ImageSize = new System.Drawing.Size(89, 79);
+            this.btFornecedores.ImageZoomSize = new System.Drawing.Size(90, 80);
+            this.btFornecedores.InitialImage = ((System.Drawing.Image)(resources.GetObject("btFornecedores.InitialImage")));
+            this.btFornecedores.Location = new System.Drawing.Point(12, 101);
+            this.btFornecedores.Name = "btFornecedores";
+            this.btFornecedores.Rotation = 0;
+            this.btFornecedores.ShowActiveImage = true;
+            this.btFornecedores.ShowCursorChanges = true;
+            this.btFornecedores.ShowImageBorders = false;
+            this.btFornecedores.ShowSizeMarkers = false;
+            this.btFornecedores.Size = new System.Drawing.Size(90, 80);
+            this.btFornecedores.TabIndex = 2;
+            this.btFornecedores.ToolTipText = "Fornecedores";
+            this.btFornecedores.WaitOnLoad = false;
+            this.btFornecedores.Zoom = 1;
+            this.btFornecedores.ZoomSpeed = 10;
+            this.btFornecedores.Click += new System.EventHandler(this.btFornecedores_Click);
             // 
             // btUsuarios
             // 
@@ -258,42 +334,6 @@
             this.pDashboard.Size = new System.Drawing.Size(1073, 737);
             this.pDashboard.TabIndex = 10;
             // 
-            // btFornecedores
-            // 
-            this.btFornecedores.ActiveImage = null;
-            this.btFornecedores.AllowAnimations = true;
-            this.btFornecedores.AllowBuffering = false;
-            this.btFornecedores.AllowToggling = false;
-            this.btFornecedores.AllowZooming = true;
-            this.btFornecedores.AllowZoomingOnFocus = false;
-            this.btFornecedores.BackColor = System.Drawing.Color.Transparent;
-            this.btFornecedores.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btFornecedores.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btFornecedores.ErrorImage = ((System.Drawing.Image)(resources.GetObject("btFornecedores.ErrorImage")));
-            this.btFornecedores.FadeWhenInactive = false;
-            this.btFornecedores.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
-            this.btFornecedores.Image = ((System.Drawing.Image)(resources.GetObject("btFornecedores.Image")));
-            this.btFornecedores.ImageActive = null;
-            this.btFornecedores.ImageLocation = null;
-            this.btFornecedores.ImageMargin = 1;
-            this.btFornecedores.ImageSize = new System.Drawing.Size(89, 79);
-            this.btFornecedores.ImageZoomSize = new System.Drawing.Size(90, 80);
-            this.btFornecedores.InitialImage = ((System.Drawing.Image)(resources.GetObject("btFornecedores.InitialImage")));
-            this.btFornecedores.Location = new System.Drawing.Point(12, 101);
-            this.btFornecedores.Name = "btFornecedores";
-            this.btFornecedores.Rotation = 0;
-            this.btFornecedores.ShowActiveImage = true;
-            this.btFornecedores.ShowCursorChanges = true;
-            this.btFornecedores.ShowImageBorders = false;
-            this.btFornecedores.ShowSizeMarkers = false;
-            this.btFornecedores.Size = new System.Drawing.Size(90, 80);
-            this.btFornecedores.TabIndex = 2;
-            this.btFornecedores.ToolTipText = "Fornecedores";
-            this.btFornecedores.WaitOnLoad = false;
-            this.btFornecedores.Zoom = 1;
-            this.btFornecedores.ZoomSpeed = 10;
-            this.btFornecedores.Click += new System.EventHandler(this.btFornecedores_Click);
-            // 
             // Geral
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -338,5 +378,6 @@
         private Bunifu.UI.WinForms.BunifuPanel pDashboard;
         private Telerik.WinControls.Themes.MaterialTheme materialTheme2;
         private Bunifu.UI.WinForms.BunifuImageButton btFornecedores;
+        private Bunifu.UI.WinForms.BunifuImageButton btProdutos;
     }
 }
