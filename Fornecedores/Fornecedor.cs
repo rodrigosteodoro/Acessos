@@ -51,7 +51,7 @@ namespace Acessos
         #region Construtor
         public Fornecedor()
         {
-            connectionString = ConnectionManager.GetConnectionString();
+            connectionString = ConnectionManager.GetConnectionString("Admin");
             InicializarValoresPadrao();
         }
 
@@ -494,10 +494,11 @@ namespace Acessos
                 Status = reader.IsDBNull(reader.GetOrdinal("Status")) ? null : reader.GetString(reader.GetOrdinal("Status")),
                 Observacoes = reader.IsDBNull(reader.GetOrdinal("Observacoes")) ? null : reader.GetString(reader.GetOrdinal("Observacoes")),
                 DataCadastro = reader.GetDateTime(reader.GetOrdinal("DataCadastro")),
-                UltimaModificacao = reader.GetDateTime(reader.GetOrdinal("UltimaModificacao")),
+                UltimaModificacao = (DateTime)(reader.IsDBNull(reader.GetOrdinal("UltimaModificacao")) ? (DateTime?)null : reader.GetDateTime(reader.GetOrdinal("UltimaModificacao"))),
                 Ativo = reader.GetBoolean(reader.GetOrdinal("Ativo"))
             };
         }
+
         #endregion
 
         #region Métodos de Formatação

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using OfficeOpenXml;
 
 namespace Acessos
 {
@@ -12,8 +13,9 @@ namespace Acessos
         [STAThread]
         static void Main()
         {
+           ExcelPackage.License.SetNonCommercialPersonal("Acessos");
             Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
+            Application.SetCompatibleTextRenderingDefault(false);           
 
             using (var loginForm = new Loginfrm())
             {

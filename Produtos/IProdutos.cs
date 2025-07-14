@@ -15,7 +15,7 @@ namespace Acessos
           string Descricao { get; set; }
           decimal Peso { get; set; }
           decimal Volume { get; set; }
-          DateTime DataValidade { get; set; }
+          DateTime? DataValidade { get; set; }
           string Lote { get; set; }
 
 
@@ -63,5 +63,8 @@ namespace Acessos
           string SKU { get; set; }
           DateTime DataCadastro { get; set; }
           DateTime UltimaAlteracao { get; set; }
+
+        Task<List<Produto>> ObterTodosAsync();
+
     }
 }

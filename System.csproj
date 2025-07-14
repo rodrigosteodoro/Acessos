@@ -9,6 +9,7 @@
     <RootNamespace>Acessos</RootNamespace>
     <AssemblyName>Acessos</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <LangVersion>12.0</LangVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
@@ -96,6 +97,35 @@
     <Compile Include="Fornecedores\frmFornecedores.Designer.cs">
       <DependentUpon>frmFornecedores.cs</DependentUpon>
     </Compile>
+    <Compile Include="Importacao\frmImportacaoProdutos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Importacao\frmImportacaoProdutos.Designer.cs">
+      <DependentUpon>frmImportacaoProdutos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Importacao\frmResolverDuplicatas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Importacao\frmResolverDuplicatas.Designer.cs">
+      <DependentUpon>frmResolverDuplicatas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Importacao\frmVisualizarDiferenca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Importacao\frmVisualizarDiferenca.Designer.cs">
+      <DependentUpon>frmVisualizarDiferenca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Importacao\ProdutoDuplicataService.cs" />
+    <Compile Include="Importacao\ProdutoImportServiceClass.cs" />
+    <Compile Include="Importacao\Progresso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Importacao\SelecionarAcao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Importacao\SelecionarAcao.Designer.cs">
+      <DependentUpon>SelecionarAcao.cs</DependentUpon>
+    </Compile>
     <Compile Include="Produtos\frmEdicaoP.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +181,18 @@
     <EmbeddedResource Include="Fornecedores\frmFornecedores.resx">
       <DependentUpon>frmFornecedores.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Importacao\frmImportacaoProdutos.resx">
+      <DependentUpon>frmImportacaoProdutos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Importacao\frmResolverDuplicatas.resx">
+      <DependentUpon>frmResolverDuplicatas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Importacao\frmVisualizarDiferenca.resx">
+      <DependentUpon>frmVisualizarDiferenca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Importacao\SelecionarAcao.resx">
+      <DependentUpon>SelecionarAcao.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Produtos\frmEdicaoP.resx">
       <DependentUpon>frmEdicaoP.cs</DependentUpon>
     </EmbeddedResource>
@@ -197,6 +239,9 @@
     </PackageReference>
     <PackageReference Include="Dapper">
       <Version>2.1.66</Version>
+    </PackageReference>
+    <PackageReference Include="EPPlus">
+      <Version>8.0.7</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>

@@ -111,6 +111,7 @@ namespace Acessos
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnFechar = new System.Windows.Forms.Button();
             this.dgvProdutos = new Bunifu.UI.WinForms.BunifuDataGridView();
+            this.btImportar = new System.Windows.Forms.Button();
             this.panelBusca.SuspendLayout();
             this.groupBoxIdentificacao.SuspendLayout();
             this.groupBoxClassificacao.SuspendLayout();
@@ -139,9 +140,9 @@ namespace Acessos
             this.panelBusca.Controls.Add(this.txtBusca);
             this.panelBusca.Controls.Add(this.btnBuscar);
             this.panelBusca.Controls.Add(this.lblBusca);
-            this.panelBusca.Location = new System.Drawing.Point(10, 10);
+            this.panelBusca.Location = new System.Drawing.Point(12, 10);
             this.panelBusca.Name = "panelBusca";
-            this.panelBusca.Size = new System.Drawing.Size(514, 35);
+            this.panelBusca.Size = new System.Drawing.Size(819, 35);
             this.panelBusca.TabIndex = 1;
             // 
             // txtBusca
@@ -149,7 +150,7 @@ namespace Acessos
             this.txtBusca.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtBusca.Location = new System.Drawing.Point(52, 7);
             this.txtBusca.Name = "txtBusca";
-            this.txtBusca.Size = new System.Drawing.Size(343, 23);
+            this.txtBusca.Size = new System.Drawing.Size(669, 23);
             this.txtBusca.TabIndex = 1;
             this.txtBusca.TextChanged += new System.EventHandler(this.txtBusca_TextChanged);
             // 
@@ -158,7 +159,7 @@ namespace Acessos
             this.btnBuscar.BackColor = System.Drawing.Color.SteelBlue;
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnBuscar.ForeColor = System.Drawing.Color.White;
-            this.btnBuscar.Location = new System.Drawing.Point(403, 6);
+            this.btnBuscar.Location = new System.Drawing.Point(727, 8);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(64, 22);
             this.btnBuscar.TabIndex = 2;
@@ -188,7 +189,7 @@ namespace Acessos
             this.groupBoxIdentificacao.Controls.Add(this.label4);
             this.groupBoxIdentificacao.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.groupBoxIdentificacao.ForeColor = System.Drawing.Color.DarkBlue;
-            this.groupBoxIdentificacao.Location = new System.Drawing.Point(540, 10);
+            this.groupBoxIdentificacao.Location = new System.Drawing.Point(875, 17);
             this.groupBoxIdentificacao.Name = "groupBoxIdentificacao";
             this.groupBoxIdentificacao.Size = new System.Drawing.Size(429, 104);
             this.groupBoxIdentificacao.TabIndex = 2;
@@ -289,7 +290,7 @@ namespace Acessos
             this.groupBoxClassificacao.Controls.Add(this.label10);
             this.groupBoxClassificacao.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.groupBoxClassificacao.ForeColor = System.Drawing.Color.DarkBlue;
-            this.groupBoxClassificacao.Location = new System.Drawing.Point(540, 121);
+            this.groupBoxClassificacao.Location = new System.Drawing.Point(875, 128);
             this.groupBoxClassificacao.Name = "groupBoxClassificacao";
             this.groupBoxClassificacao.Size = new System.Drawing.Size(429, 104);
             this.groupBoxClassificacao.TabIndex = 3;
@@ -448,7 +449,7 @@ namespace Acessos
             this.groupBoxEstoque.Controls.Add(this.label14);
             this.groupBoxEstoque.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.groupBoxEstoque.ForeColor = System.Drawing.Color.DarkBlue;
-            this.groupBoxEstoque.Location = new System.Drawing.Point(540, 232);
+            this.groupBoxEstoque.Location = new System.Drawing.Point(875, 239);
             this.groupBoxEstoque.Name = "groupBoxEstoque";
             this.groupBoxEstoque.Size = new System.Drawing.Size(429, 87);
             this.groupBoxEstoque.TabIndex = 4;
@@ -578,7 +579,7 @@ namespace Acessos
             this.groupBoxPrecos.Controls.Add(this.label20);
             this.groupBoxPrecos.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.groupBoxPrecos.ForeColor = System.Drawing.Color.DarkBlue;
-            this.groupBoxPrecos.Location = new System.Drawing.Point(540, 326);
+            this.groupBoxPrecos.Location = new System.Drawing.Point(875, 333);
             this.groupBoxPrecos.Name = "groupBoxPrecos";
             this.groupBoxPrecos.Size = new System.Drawing.Size(429, 104);
             this.groupBoxPrecos.TabIndex = 5;
@@ -764,7 +765,7 @@ namespace Acessos
             this.groupBoxTributacao.Controls.Add(this.label28);
             this.groupBoxTributacao.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.groupBoxTributacao.ForeColor = System.Drawing.Color.DarkBlue;
-            this.groupBoxTributacao.Location = new System.Drawing.Point(540, 437);
+            this.groupBoxTributacao.Location = new System.Drawing.Point(875, 444);
             this.groupBoxTributacao.Name = "groupBoxTributacao";
             this.groupBoxTributacao.Size = new System.Drawing.Size(429, 104);
             this.groupBoxTributacao.TabIndex = 6;
@@ -940,7 +941,7 @@ namespace Acessos
             this.groupBoxImagem.Controls.Add(this.btnRemoverImagem);
             this.groupBoxImagem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.groupBoxImagem.ForeColor = System.Drawing.Color.DarkBlue;
-            this.groupBoxImagem.Location = new System.Drawing.Point(986, 10);
+            this.groupBoxImagem.Location = new System.Drawing.Point(1321, 17);
             this.groupBoxImagem.Name = "groupBoxImagem";
             this.groupBoxImagem.Size = new System.Drawing.Size(214, 260);
             this.groupBoxImagem.TabIndex = 7;
@@ -997,7 +998,7 @@ namespace Acessos
             this.groupBoxComplementares.Controls.Add(this.label30);
             this.groupBoxComplementares.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
             this.groupBoxComplementares.ForeColor = System.Drawing.Color.DarkBlue;
-            this.groupBoxComplementares.Location = new System.Drawing.Point(986, 277);
+            this.groupBoxComplementares.Location = new System.Drawing.Point(1321, 284);
             this.groupBoxComplementares.Name = "groupBoxComplementares";
             this.groupBoxComplementares.Size = new System.Drawing.Size(214, 257);
             this.groupBoxComplementares.TabIndex = 8;
@@ -1188,7 +1189,6 @@ namespace Acessos
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvProdutos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvProdutos.ColumnHeadersHeight = 40;
-            this.dgvProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvProdutos.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(223)))), ((int)(((byte)(223)))));
             this.dgvProdutos.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.dgvProdutos.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black;
@@ -1228,17 +1228,32 @@ namespace Acessos
             this.dgvProdutos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvProdutos.RowTemplate.Height = 40;
             this.dgvProdutos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProdutos.Size = new System.Drawing.Size(514, 490);
+            this.dgvProdutos.Size = new System.Drawing.Size(859, 490);
             this.dgvProdutos.TabIndex = 42;
             this.dgvProdutos.TabStop = false;
             this.dgvProdutos.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Teal;
+            // 
+            // btImportar
+            // 
+            this.btImportar.BackColor = System.Drawing.Color.DarkOrange;
+            this.btImportar.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btImportar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btImportar.ForeColor = System.Drawing.Color.White;
+            this.btImportar.Location = new System.Drawing.Point(490, 555);
+            this.btImportar.Name = "btImportar";
+            this.btImportar.Size = new System.Drawing.Size(86, 35);
+            this.btImportar.TabIndex = 43;
+            this.btImportar.Text = "Importar";
+            this.btImportar.UseVisualStyleBackColor = false;
+            this.btImportar.Click += new System.EventHandler(this.btImportar_Click);
             // 
             // frmEdicaoP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1217, 607);
+            this.ClientSize = new System.Drawing.Size(1547, 607);
+            this.Controls.Add(this.btImportar);
             this.Controls.Add(this.dgvProdutos);
             this.Controls.Add(this.btnFechar);
             this.Controls.Add(this.btnEditar);
@@ -1374,5 +1389,6 @@ namespace Acessos
         private Label label11, label12, label13, label14, label15, label16, label17, label18, label19, label20;
         private Label label21, label22, label23, label24, label25, label26, label27, label28, label29, label30;
         private Bunifu.UI.WinForms.BunifuDataGridView dgvProdutos;
+        private Button btImportar;
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -318,6 +319,85 @@ namespace Acessos
                 UltimaAlteracao = reader.GetDateTime(reader.GetOrdinal("UltimaAlteracao"))
             };
         }
-       
+        public async Task<int> InserirProdutoAsync(IProdutos produto)
+        {
+            using (var connection = new SqlConnection(connectionString))
+            {
+                using (var command = new SqlCommand("InserirProdutoComFornecedor", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    // Parâmetros do fornecedor
+                    command.Parameters.AddWithValue("@RazaoSocial", produto.NomeFornecedor ?? "");
+                    command.Parameters.AddWithValue("@NomeFantasia", DBNull.Value); // ou produto.NomeFantasia, se houver
+                    command.Parameters.AddWithValue("@CNPJ", produto.NomeFornecedor ?? "00000000000000"); // ajuste conforme seu modelo
+                    command.Parameters.AddWithValue("@DataFundacao", DBNull.Value);
+                    command.Parameters.AddWithValue("@Telefone", DBNull.Value);
+                    command.Parameters.AddWithValue("@Email", DBNull.Value);
+                    command.Parameters.AddWithValue("@Site", DBNull.Value);
+                    command.Parameters.AddWithValue("@Endereco", DBNull.Value);
+                    command.Parameters.AddWithValue("@Numero", DBNull.Value);
+                    command.Parameters.AddWithValue("@CEP", DBNull.Value);
+                    command.Parameters.AddWithValue("@Logradouro", DBNull.Value);
+                    command.Parameters.AddWithValue("@Bairro", DBNull.Value);
+                    command.Parameters.AddWithValue("@Localidade", DBNull.Value);
+                    command.Parameters.AddWithValue("@UF", DBNull.Value);
+                    command.Parameters.AddWithValue("@Estado", DBNull.Value);
+                    command.Parameters.AddWithValue("@Regiao", DBNull.Value);
+                    command.Parameters.AddWithValue("@IBGE", DBNull.Value);
+                    command.Parameters.AddWithValue("@Complemento", DBNull.Value);
+                    command.Parameters.AddWithValue("@Contato", DBNull.Value);
+                    command.Parameters.AddWithValue("@TipoFornecedor", DBNull.Value);
+                    command.Parameters.AddWithValue("@Status", DBNull.Value);
+                    command.Parameters.AddWithValue("@ObservacoesFornecedor", DBNull.Value);
+
+                    // Parâmetros do produto
+                    command.Parameters.AddWithValue("@CodigoProduto", produto.CodigoProduto ?? "");
+                    command.Parameters.AddWithValue("@CodigoBarras", produto.CodigoBarras ?? (object)DBNull.Value);
+                    command.Parameters.AddWithValue("@Nome", produto.Nome ?? "");
+                    command.Parameters.AddWithValue("@Descricao", produto.Descricao ?? (object)DBNull.Value);
+                    command.Parameters.AddWithValue("@Peso", produto.Peso);
+                    command.Parameters.AddWithValue("@Volume", produto.Volume);
+                    command.Parameters.AddWithValue("@DataValidade", produto.DataValidade ?? DateTime.Now);
+                    command.Parameters.AddWithValue("@Lote", produto.Lote ?? (object)DBNull.Value);
+                    command.Parameters.AddWithValue("@Categoria", produto.Categoria ?? (object)DBNull.Value);
+                    command.Parameters.AddWithValue("@Subcategoria", produto.Subcategoria ?? (object)DBNull.Value);
+                    command.Parameters.AddWithValue("@Marca", produto.Marca ?? (object)DBNull.Value);
+                    command.Parameters.AddWithValue("@UnidadeMedida", produto.UnidadeMedida ?? "UN");
+                    command.Parameters.AddWithValue("@TipoProduto", produto.TipoProduto ?? (object)DBNull.Value);
+                    command.Parameters.AddWithValue("@QuantidadeAtual", produto.QuantidadeAtual);
+                    command.Parameters.AddWithValue("@EstoqueMinimo", produto.EstoqueMinimo);
+                    command.Parameters.AddWithValue("@EstoqueMaximo", produto.EstoqueMaximo);
+                    command.Parameters.AddWithValue("@LocalizacaoEstoque", produto.LocalizacaoEstoque ?? (object)DBNull.Value);
+                    command.Parameters.AddWithValue("@PermiteEstoqueNegativo", produto.PermiteEstoqueNegativo);
+                    command.Parameters.AddWithValue("@PrecoCusto", produto.PrecoCusto);
+                    command.Parameters.AddWithValue("@PrecoVenda", produto.PrecoVenda);
+                    command.Parameters.AddWithValue("@MargemLucro", produto.MargemLucro);
+                    command.Parameters.AddWithValue("@PromocaoAtiva", produto.PromocaoAtiva);
+                    command.Parameters.AddWithValue("@PrecoPromocional", produto.PrecoPromocional ?? (object)DBNull.Value);
+                    command.Parameters.AddWithValue("@InicioPromocao", produto.InicioPromocao ?? (object)DBNull.Value);
+                    command.Parameters.AddWithValue("@FimPromocao", produto.FimPromocao ?? (object)DBNull.Value);
+                    command.Parameters.AddWithValue("@OrigemProduto", produto.OrigemProduto ?? (object)DBNull.Value);
+                    command.Parameters.AddWithValue("@NCM", produto.NCM ?? (object)DBNull.Value);
+                    command.Parameters.AddWithValue("@CFOP", produto.CFOP ?? (object)DBNull.Value);
+                    command.Parameters.AddWithValue("@CSTCSOSN", produto.CSTCSOSN ?? (object)DBNull.Value);
+                    command.Parameters.AddWithValue("@AliquotaICMS", produto.AliquotaICMS);
+                    command.Parameters.AddWithValue("@AliquotaPIS", produto.AliquotaPIS);
+                    command.Parameters.AddWithValue("@AliquotaCOFINS", produto.AliquotaCOFINS);
+                    command.Parameters.AddWithValue("@AliquotaIPI", produto.AliquotaIPI);
+                    command.Parameters.AddWithValue("@Ativo", produto.Ativo);
+                    command.Parameters.AddWithValue("@ObservacoesProduto", produto.Observacoes ?? (object)DBNull.Value);
+                    command.Parameters.AddWithValue("@SKU", produto.SKU ?? (object)DBNull.Value);
+                    command.Parameters.AddWithValue("@DataCadastro", produto.DataCadastro);
+                    command.Parameters.AddWithValue("@UltimaAlteracao", produto.UltimaAlteracao);
+
+                    await connection.OpenAsync();
+                    var result = await command.ExecuteNonQueryAsync();
+                    return result; // retorna o número de linhas afetadas
+                }
+            }
+        }
+
+
     }
 }

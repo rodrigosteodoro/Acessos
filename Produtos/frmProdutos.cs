@@ -69,11 +69,16 @@ namespace Acessos
         {
             try
             {
-                var fornecedores = await fornecedorDAL.ObterTodosFornecedoresAsync();
+                var fornecedores = await fornecedorDAL.ObterTodosFornecedoresAsync() ?? new List<Fornecedor>();
                 cmbFornecedor.DataSource = fornecedores;
                 cmbFornecedor.DisplayMember = "RazaoSocial";
                 cmbFornecedor.ValueMember = "ID";
-                cmbFornecedor.SelectedIndex = -1;
+
+                // Só selecione índice se houver itens
+                if (fornecedores.Count > 0)
+                    cmbFornecedor.SelectedIndex = 0;
+                else
+                    cmbFornecedor.SelectedIndex = -1;
             }
             catch (Exception ex)
             {
@@ -81,6 +86,7 @@ namespace Acessos
                     "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
         private async Task GerarCodigoProdutoAsync()
         {
             try

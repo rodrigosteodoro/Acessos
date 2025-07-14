@@ -417,6 +417,11 @@ namespace Acessos
             }
         }
 
+        private void btImportar_Click(object sender, EventArgs e)
+        {
+            FormManager.ShowForm<frmImportacaoProdutos>();
+        }
+
         #endregion
 
         #region Eventos de Cálculo de Preços
@@ -966,5 +971,7 @@ namespace Acessos
         }
 
         #endregion
+
+       
     }
 }

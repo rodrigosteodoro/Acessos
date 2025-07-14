@@ -198,6 +198,17 @@ namespace Acessos
                 });
                 return result.Cast<IProdutos>().ToList();
             }
+        }              
+      
+        public async Task<List<Produto>> ObterTodosAsync()
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                var result = await connection.QueryAsync<Produto>("SELECT * FROM Produtos");
+                return result.ToList();
+            }
         }
+        
+
     }
 }

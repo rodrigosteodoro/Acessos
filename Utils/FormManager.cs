@@ -100,7 +100,37 @@ public static class FormManager
         _formAtual.Show();
     }
 
+    public static void ShowForm<T>(string titulo, T form, Action<T> configuracao = null) where T : Form
+    {
+        Type formType = typeof(T);
+
+        if (_openedForms.ContainsKey(formType))
+        {
+            var formExistente = _openedForms[formType];
+            if (formExistente == null || formExistente.IsDisposed)
+                _openedForms.Remove(formType);
+            else
+            {
+                formExistente.WindowState = FormWindowState.Normal;
+                formExistente.BringToFront();
+                formExistente.Focus();
+                return;
+            }
+        }
+
+        _openedForms[formType] = form;
+        form.FormClosed += (s, e) => _openedForms.Remove(formType);
+
+        configuracao?.Invoke(form);
+
+        form.Text = titulo;
+        form.Show();
+        form.BringToFront();
+    }
+
+
 }
+// Example usage in a form
 //private void btnAbrirCadastroUsuario_Click(object sender, EventArgs e)
 //{
 //    FormManager.ShowForm<FormCadastroUsuario>();

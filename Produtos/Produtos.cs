@@ -1,9 +1,14 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Configuration;
 using System.Data.SqlClient;
+using System.Linq;
+using System.Threading.Tasks;
+using Dapper;
 
 namespace Acessos
 {
-    public class Produto: IProdutos
+    public class Produto : IProdutos
     {
         public int ID { get; set; }
         public string CodigoProduto { get; set; }
@@ -12,9 +17,9 @@ namespace Acessos
         public string Descricao { get; set; }
         public decimal Peso { get; set; }
         public decimal Volume { get; set; }
-        public DateTime DataValidade { get; set; }
+        public DateTime? DataValidade { get; set; }
         public string Lote { get; set; }
-        
+
 
         // Classificação
         public string Categoria { get; set; }
@@ -60,7 +65,7 @@ namespace Acessos
         public string SKU { get; set; }
         public DateTime DataCadastro { get; set; }
         public DateTime UltimaAlteracao { get; set; }
-        
+
 
         public Produto()
         {
@@ -78,6 +83,69 @@ namespace Acessos
             Volume = 0;
             EstoqueMinimo = 0;
             EstoqueMaximo = 0;
-        }   
+        }
+        public async Task<List<Produto>> ObterTodosAsync()
+        {
+            using (var connection = new SqlConnection(ConnectionManager.GetConnectionString("Admin")))
+            {
+                var result = await connection.QueryAsync<Produto>("SELECT * FROM Produtos");
+                return result.ToList();
+            }
+        }
+
+        public Produto Clone()
+        {
+            return new Produto
+            {
+                //clonar as propriedades do produto
+                ID = this.ID,
+                DataValidade = this.DataValidade,
+                Lote = this.Lote,
+                CodigoProduto = this.CodigoProduto,
+                CodigoBarras = this.CodigoBarras,
+                Nome = this.Nome,
+                Descricao = this.Descricao,
+                Categoria = this.Categoria,
+                Subcategoria = this.Subcategoria,
+                Marca = this.Marca,
+                FornecedorID = this.FornecedorID,
+                NomeFornecedor = this.NomeFornecedor,
+                UnidadeMedida = this.UnidadeMedida,
+                TipoProduto = this.TipoProduto,
+                QuantidadeAtual = this.QuantidadeAtual,
+                EstoqueMinimo = this.EstoqueMinimo,
+                EstoqueMaximo = this.EstoqueMaximo,
+                LocalizacaoEstoque = this.LocalizacaoEstoque,
+                PermiteEstoqueNegativo = this.PermiteEstoqueNegativo,
+                PrecoCusto = this.PrecoCusto,
+                PrecoVenda = this.PrecoVenda,
+                MargemLucro = this.MargemLucro,
+                PromocaoAtiva = this.PromocaoAtiva,
+                PrecoPromocional = this.PrecoPromocional,
+                InicioPromocao = this.InicioPromocao,
+                FimPromocao = this.FimPromocao,
+                OrigemProduto = this.OrigemProduto,
+                NCM = this.NCM,
+                CFOP = this.CFOP,
+                CSTCSOSN = this.CSTCSOSN,
+                AliquotaICMS = this.AliquotaICMS,
+                AliquotaPIS = this.AliquotaPIS,
+                AliquotaCOFINS = this.AliquotaCOFINS,
+                AliquotaIPI = this.AliquotaIPI,
+                Ativo = this.Ativo,
+                Observacoes = this.Observacoes,
+                SKU = this.SKU,
+                DataCadastro = this.DataCadastro,
+                UltimaAlteracao = this.UltimaAlteracao,
+                Peso = this.Peso,
+                Volume = this.Volume,
+                Imagem = this.Imagem != null ? (byte[])this.Imagem.Clone() : null
+            };
+        }
+
     }
 }
+
+   
+        
+
