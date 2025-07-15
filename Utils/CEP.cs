@@ -8,7 +8,7 @@ using System.Windows.Forms;
 using Newtonsoft.Json;
 
 
-namespace Acessos.Utils
+namespace Acessos
 {
     internal class CEP
     {
@@ -57,7 +57,7 @@ namespace Acessos.Utils
 
         #endregion
     }
-    public class EnderecoInfo
+    internal class EnderecoInfo
     {
         [JsonProperty("cep")]
         public string CEP { get; set; }

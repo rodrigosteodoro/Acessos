@@ -127,7 +127,7 @@ namespace Acessos
         
         private void btProdutos_Click(object sender, EventArgs e) => FormManager.ShowForm<frmProdutos>();    
         
-        private void btClientes_Click(object sender, EventArgs e) => FormManager.ShowForm<frmEdicaoP>(); //corrigir aqui para o form de clientes
+        private void btClientes_Click(object sender, EventArgs e) => FormManager.ShowForm<frmClientes>();
 
         private void MouseLeaveHandler(object sender, EventArgs e)
         {
@@ -137,21 +137,40 @@ namespace Acessos
 
         private void MouseEnterHandler(object sender, EventArgs e)
         {
-            lbMsg.Visible = true;
-            lbMsg2.Visible = true;
+            lbMsg.Visible = false;
+            lbMsg2.Visible = false;
 
             if (sender == bt1)
+            {
                 lbMsg.Text = "módulo de Usuários.";
+                lbMsg.Visible = true;
+            }
             else if (sender == bt2)
+            {
                 lbMsg.Text = "módulo de Fornecedores.";
+                lbMsg.Visible = true;
+            }
             else if (sender == bt3)
+            {
                 lbMsg.Text = "módulo de Produtos.";
+                lbMsg.Visible = true;
+            }
             else if (sender == bt4)
+            {
                 lbMsg.Text = "módulo de Clientes.";
+                lbMsg.Visible = true;
+            }
             else if (sender == btOrcamentos)
+            {
                 lbMsg2.Text = "módulo de Orçamentos.";
+                lbMsg2.Visible = true;
+            }
             else if (sender == btVendas)
+            {
                 lbMsg2.Text = "módulo de Vendas.";
+                lbMsg2.Visible = true;
+            }
         }
+
     }
 }
