@@ -1,30 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Acessos.Usuarios;
 using Telerik.WinControls;
 
 namespace Acessos
 {
-    public partial class Geral : Form
+    public partial class Geral : Telerik.WinControls.UI.RadForm
     {
-             private readonly string usuario = SessaoUsuario.UsuarioAtual.Nome;       
-             private readonly string cargo = SessaoUsuario.UsuarioAtual.Cargo;
-             private readonly int nivelAcesso = SessaoUsuario.UsuarioAtual.NivelAcesso;
-             //
-            AuditoriaAcesso auditoria;
+        private readonly string usuario = SessaoUsuario.UsuarioAtual.Nome;
+        private readonly string cargo = SessaoUsuario.UsuarioAtual.Cargo;
+        private readonly int nivelAcesso = SessaoUsuario.UsuarioAtual.NivelAcesso;
+        //
+        AuditoriaAcesso auditoria;
 
 
-        public Geral()
-        {
-            InitializeComponent();
-        }
+        public Geral() => InitializeComponent();
+      
         private void Geral_FormClosing(object sender, FormClosingEventArgs e)
         {
             var result = RadMessageBox.Show(
@@ -38,10 +29,10 @@ namespace Acessos
             {
                 e.Cancel = true; // Cancela o fechamento
             }
-           
+
         }
 
-        private void btnLogout_Click(object sender, EventArgs e)
+        private void btLogout_Click(object sender, EventArgs e)
         {
             // Auditoria de logout
             auditoria.InserirAuditoria(new AuditoriaAcesso
@@ -57,23 +48,22 @@ namespace Acessos
             SessaoUsuario.UsuarioAtual = null;
             this.Hide();
             var loginForm = new Loginfrm();
-            
-                if (loginForm.ShowDialog() == DialogResult.OK)
-                {
-                    this.Show();
-                }
-                else
-                {
-                Application.ExitThread();
-                }
-            
-        }
 
+            if (loginForm.ShowDialog() == DialogResult.OK)
+            {
+                this.Show();
+            }
+            else
+            {
+                Application.ExitThread();
+            }
+
+        }
 
         private void Geral_Load(object sender, EventArgs e)
         {
-            lbusuario.Text = "Usuário:  "+usuario+" Função: "+cargo+" Nvl: "+nivelAcesso;
-             auditoria = new AuditoriaAcesso();
+            lbusuario.Text = "Usuário:  " + usuario;
+            auditoria = new AuditoriaAcesso();
             auditoria.InserirAuditoria(new AuditoriaAcesso
             {
                 UsuarioID = SessaoUsuario.UsuarioAtual.UsuarioID,
@@ -82,8 +72,23 @@ namespace Acessos
                 UsuarioAplicacao = SessaoUsuario.UsuarioAtual.Nome,
                 Detalhes = "observando ações."
             });
+            // eventos de mouse para os botões
+            bt1.MouseHover += MouseEnterHandler;
+            bt1.MouseLeave += MouseLeaveHandler;
+            bt2.MouseHover += MouseEnterHandler;
+            bt2.MouseLeave += MouseLeaveHandler;
+            bt3.MouseHover += MouseEnterHandler;
+            bt3.MouseLeave += MouseLeaveHandler;
+            bt4.MouseHover += MouseEnterHandler;
+            bt4.MouseLeave += MouseLeaveHandler;
+            btLogout.MouseHover += MouseEnterHandler;
+            btLogout.MouseLeave += MouseLeaveHandler;
+            btOrcamentos.MouseHover += MouseEnterHandler;
+            btOrcamentos.MouseLeave += MouseLeaveHandler;
+            btVendas.MouseHover += MouseEnterHandler;
+            btVendas.MouseLeave += MouseLeaveHandler;
         }
-        
+
         internal bool VerificarPermissao(Cargo cargo, int nivelAcesso, Acao acao)
         {
             switch (cargo)
@@ -115,22 +120,38 @@ namespace Acessos
             }
             return false; // Não permitido por padrão
         }
-      
-        private void bt1_Click(object sender, EventArgs e)
+
+        private void btUsuarios_Click(object sender, EventArgs e) => FormManager.ShowForm<Usuariosfrm>();
+       
+        private void btFornecedores_Click(object sender, EventArgs e) => FormManager.ShowForm<frmFornecedores>();
+        
+        private void btProdutos_Click(object sender, EventArgs e) => FormManager.ShowForm<frmProdutos>();    
+        
+        private void btClientes_Click(object sender, EventArgs e) => FormManager.ShowForm<frmEdicaoP>(); //corrigir aqui para o form de clientes
+
+        private void MouseLeaveHandler(object sender, EventArgs e)
         {
-            FormManager.ShowForm<Usuariosfrm>();            
+            lbMsg.Visible = false;
+            lbMsg2.Visible = false;
         }
 
-        private void btFornecedores_Click(object sender, EventArgs e) 
+        private void MouseEnterHandler(object sender, EventArgs e)
         {
-            FormManager.ShowForm<frmFornecedores>();
-        }
+            lbMsg.Visible = true;
+            lbMsg2.Visible = true;
 
-        private void btProdutos_Click(object sender, EventArgs e)
-        {
-            var FormProdutos = new frmProdutos();
-            FormProdutos.ShowDialog();
-            // FormManager.ShowForm<frmProdutos>();
+            if (sender == bt1)
+                lbMsg.Text = "módulo de Usuários.";
+            else if (sender == bt2)
+                lbMsg.Text = "módulo de Fornecedores.";
+            else if (sender == bt3)
+                lbMsg.Text = "módulo de Produtos.";
+            else if (sender == bt4)
+                lbMsg.Text = "módulo de Clientes.";
+            else if (sender == btOrcamentos)
+                lbMsg2.Text = "módulo de Orçamentos.";
+            else if (sender == btVendas)
+                lbMsg2.Text = "módulo de Vendas.";
         }
     }
 }
