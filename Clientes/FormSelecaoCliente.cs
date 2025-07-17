@@ -8,19 +8,23 @@ namespace Acessos
 {
     public partial class FormSelecaoCliente : Telerik.WinControls.UI.RadForm
     {
-        private List<Cliente> clientes;
-        private List<Cliente> clientesFiltrados;
+        private List<ICliente> clientes;
+        private List<ICliente> clientesFiltrados;
 
         public Cliente ClienteSelecionado { get; private set; }
 
-        public FormSelecaoCliente(List<Cliente> listaClientes)
+        public FormSelecaoCliente(List<ICliente> listaClientes)
         {
             InitializeComponent();
-            clientes = listaClientes ?? new List<Cliente>();
-            clientesFiltrados = new List<Cliente>(clientes);
+            clientes = listaClientes ?? new List<ICliente>();
+
+            // Corrija aqui:
+            clientesFiltrados = clientes.OfType<ICliente>().ToList();
+
             ConfigurarGrid();
             CarregarClientes();
         }
+
 
         private void ConfigurarGrid()
         {
@@ -156,7 +160,7 @@ namespace Acessos
                 if (string.IsNullOrEmpty(filtro))
                 {
                     // Se não há filtro, mostrar todos os clientes
-                    clientesFiltrados = new List<Cliente>(clientes);
+                    clientesFiltrados = new List<ICliente>(clientes);
                 }
                 else
                 {

@@ -31,13 +31,14 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Geral));
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges7 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges8 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges9 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges10 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges11 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges12 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges13 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges14 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges6 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             this.aquaTheme1 = new Telerik.WinControls.Themes.AquaTheme();
             this.materialTheme1 = new Telerik.WinControls.Themes.MaterialTheme();
             this.radFormConverter1 = new Telerik.WinControls.UI.RadFormConverter();
@@ -52,21 +53,23 @@
             this.btLogout = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
-            this.bunifuLabel11 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.bunifuLabel10 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.bunifuLabel9 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.bunifuLabel8 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.bunifuLabel7 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.bunifuLabel6 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.bunifuLabel5 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.bunifuLabel4 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.bunifuLabel3 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.bunifuLabel2 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.ItensPromo = new Bunifu.UI.WinForms.BunifuLabel();
+            this.ItensVencendo = new Bunifu.UI.WinForms.BunifuLabel();
+            this.OrcNo = new Bunifu.UI.WinForms.BunifuLabel();
+            this.ValorEstq = new Bunifu.UI.WinForms.BunifuLabel();
+            this.OrcYes = new Bunifu.UI.WinForms.BunifuLabel();
+            this.OrcEspera = new Bunifu.UI.WinForms.BunifuLabel();
+            this.TotalGast = new Bunifu.UI.WinForms.BunifuLabel();
+            this.TotalVendasHj = new Bunifu.UI.WinForms.BunifuLabel();
+            this.QuantClienAt = new Bunifu.UI.WinForms.BunifuLabel();
+            this.QuantForn = new Bunifu.UI.WinForms.BunifuLabel();
+            this.ProdEstoq = new Bunifu.UI.WinForms.BunifuLabel();
             this.radGroupBox2 = new Telerik.WinControls.UI.RadGroupBox();
             this.lbMsg2 = new Bunifu.UI.WinForms.BunifuLabel();
             this.btVendas = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.btOrcamentos = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
+            this.btAprovarOrcamentos = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
+            this.lblStatus = new Bunifu.UI.WinForms.BunifuLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gb1)).BeginInit();
             this.gb1.SuspendLayout();
@@ -167,11 +170,11 @@
             this.bt4.ColorContrastOnClick = 45;
             this.bt4.ColorContrastOnHover = 45;
             this.bt4.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges8.BottomLeft = true;
-            borderEdges8.BottomRight = true;
-            borderEdges8.TopLeft = true;
-            borderEdges8.TopRight = true;
-            this.bt4.CustomizableEdges = borderEdges8;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.bt4.CustomizableEdges = borderEdges1;
             this.bt4.DialogResult = System.Windows.Forms.DialogResult.None;
             this.bt4.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.bt4.DisabledFillColor = System.Drawing.Color.Empty;
@@ -261,11 +264,11 @@
             this.bt3.ColorContrastOnClick = 45;
             this.bt3.ColorContrastOnHover = 45;
             this.bt3.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges9.BottomLeft = true;
-            borderEdges9.BottomRight = true;
-            borderEdges9.TopLeft = true;
-            borderEdges9.TopRight = true;
-            this.bt3.CustomizableEdges = borderEdges9;
+            borderEdges2.BottomLeft = true;
+            borderEdges2.BottomRight = true;
+            borderEdges2.TopLeft = true;
+            borderEdges2.TopRight = true;
+            this.bt3.CustomizableEdges = borderEdges2;
             this.bt3.DialogResult = System.Windows.Forms.DialogResult.None;
             this.bt3.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.bt3.DisabledFillColor = System.Drawing.Color.Empty;
@@ -355,11 +358,11 @@
             this.bt2.ColorContrastOnClick = 45;
             this.bt2.ColorContrastOnHover = 45;
             this.bt2.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges10.BottomLeft = true;
-            borderEdges10.BottomRight = true;
-            borderEdges10.TopLeft = true;
-            borderEdges10.TopRight = true;
-            this.bt2.CustomizableEdges = borderEdges10;
+            borderEdges3.BottomLeft = true;
+            borderEdges3.BottomRight = true;
+            borderEdges3.TopLeft = true;
+            borderEdges3.TopRight = true;
+            this.bt2.CustomizableEdges = borderEdges3;
             this.bt2.DialogResult = System.Windows.Forms.DialogResult.None;
             this.bt2.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.bt2.DisabledFillColor = System.Drawing.Color.Empty;
@@ -449,11 +452,11 @@
             this.bt1.ColorContrastOnClick = 45;
             this.bt1.ColorContrastOnHover = 45;
             this.bt1.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges11.BottomLeft = true;
-            borderEdges11.BottomRight = true;
-            borderEdges11.TopLeft = true;
-            borderEdges11.TopRight = true;
-            this.bt1.CustomizableEdges = borderEdges11;
+            borderEdges4.BottomLeft = true;
+            borderEdges4.BottomRight = true;
+            borderEdges4.TopLeft = true;
+            borderEdges4.TopRight = true;
+            this.bt1.CustomizableEdges = borderEdges4;
             this.bt1.DialogResult = System.Windows.Forms.DialogResult.None;
             this.bt1.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.bt1.DisabledFillColor = System.Drawing.Color.Empty;
@@ -543,11 +546,11 @@
             this.btLogout.ColorContrastOnClick = 45;
             this.btLogout.ColorContrastOnHover = 45;
             this.btLogout.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges12.BottomLeft = true;
-            borderEdges12.BottomRight = true;
-            borderEdges12.TopLeft = true;
-            borderEdges12.TopRight = true;
-            this.btLogout.CustomizableEdges = borderEdges12;
+            borderEdges5.BottomLeft = true;
+            borderEdges5.BottomRight = true;
+            borderEdges5.TopLeft = true;
+            borderEdges5.TopRight = true;
+            this.btLogout.CustomizableEdges = borderEdges5;
             this.btLogout.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btLogout.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btLogout.DisabledFillColor = System.Drawing.Color.Empty;
@@ -622,218 +625,220 @@
             // 
             this.radGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
             this.radGroupBox1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.radGroupBox1.Controls.Add(this.bunifuLabel11);
-            this.radGroupBox1.Controls.Add(this.bunifuLabel10);
-            this.radGroupBox1.Controls.Add(this.bunifuLabel9);
-            this.radGroupBox1.Controls.Add(this.bunifuLabel8);
-            this.radGroupBox1.Controls.Add(this.bunifuLabel7);
-            this.radGroupBox1.Controls.Add(this.bunifuLabel6);
-            this.radGroupBox1.Controls.Add(this.bunifuLabel5);
-            this.radGroupBox1.Controls.Add(this.bunifuLabel4);
-            this.radGroupBox1.Controls.Add(this.bunifuLabel3);
-            this.radGroupBox1.Controls.Add(this.bunifuLabel2);
-            this.radGroupBox1.Controls.Add(this.bunifuLabel1);
+            this.radGroupBox1.Controls.Add(this.lblStatus);
+            this.radGroupBox1.Controls.Add(this.ItensPromo);
+            this.radGroupBox1.Controls.Add(this.ItensVencendo);
+            this.radGroupBox1.Controls.Add(this.OrcNo);
+            this.radGroupBox1.Controls.Add(this.ValorEstq);
+            this.radGroupBox1.Controls.Add(this.OrcYes);
+            this.radGroupBox1.Controls.Add(this.OrcEspera);
+            this.radGroupBox1.Controls.Add(this.TotalGast);
+            this.radGroupBox1.Controls.Add(this.TotalVendasHj);
+            this.radGroupBox1.Controls.Add(this.QuantClienAt);
+            this.radGroupBox1.Controls.Add(this.QuantForn);
+            this.radGroupBox1.Controls.Add(this.ProdEstoq);
             this.radGroupBox1.ForeColor = System.Drawing.Color.RoyalBlue;
             this.radGroupBox1.HeaderAlignment = Telerik.WinControls.UI.HeaderAlignment.Center;
             this.radGroupBox1.HeaderText = "DashBoard";
             this.radGroupBox1.Location = new System.Drawing.Point(12, 201);
             this.radGroupBox1.Name = "radGroupBox1";
-            this.radGroupBox1.Size = new System.Drawing.Size(1248, 235);
+            this.radGroupBox1.Size = new System.Drawing.Size(1248, 274);
             this.radGroupBox1.TabIndex = 4;
             this.radGroupBox1.Text = "DashBoard";
             this.radGroupBox1.ThemeName = "Aqua";
             // 
-            // bunifuLabel11
+            // ItensPromo
             // 
-            this.bunifuLabel11.AllowParentOverrides = false;
-            this.bunifuLabel11.AutoEllipsis = false;
-            this.bunifuLabel11.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel11.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel11.Font = new System.Drawing.Font("Yu Gothic UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.bunifuLabel11.ForeColor = System.Drawing.Color.OrangeRed;
-            this.bunifuLabel11.Location = new System.Drawing.Point(544, 176);
-            this.bunifuLabel11.Name = "bunifuLabel11";
-            this.bunifuLabel11.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel11.Size = new System.Drawing.Size(258, 21);
-            this.bunifuLabel11.TabIndex = 19;
-            this.bunifuLabel11.Text = "Quantidade de Itens em Promoção:";
-            this.bunifuLabel11.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuLabel11.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.ItensPromo.AllowParentOverrides = false;
+            this.ItensPromo.AutoEllipsis = false;
+            this.ItensPromo.Cursor = System.Windows.Forms.Cursors.Default;
+            this.ItensPromo.CursorType = System.Windows.Forms.Cursors.Default;
+            this.ItensPromo.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ItensPromo.ForeColor = System.Drawing.Color.OrangeRed;
+            this.ItensPromo.Location = new System.Drawing.Point(544, 176);
+            this.ItensPromo.Name = "ItensPromo";
+            this.ItensPromo.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.ItensPromo.Size = new System.Drawing.Size(213, 21);
+            this.ItensPromo.TabIndex = 19;
+            this.ItensPromo.Text = "Quantidade de Itens em Promoção:";
+            this.ItensPromo.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ItensPromo.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // bunifuLabel10
+            // ItensVencendo
             // 
-            this.bunifuLabel10.AllowParentOverrides = false;
-            this.bunifuLabel10.AutoEllipsis = false;
-            this.bunifuLabel10.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel10.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel10.Font = new System.Drawing.Font("Yu Gothic UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.bunifuLabel10.ForeColor = System.Drawing.Color.OrangeRed;
-            this.bunifuLabel10.Location = new System.Drawing.Point(5, 176);
-            this.bunifuLabel10.Name = "bunifuLabel10";
-            this.bunifuLabel10.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel10.Size = new System.Drawing.Size(325, 21);
-            this.bunifuLabel10.TabIndex = 18;
-            this.bunifuLabel10.Text = "Quantidade de Itens Vencendo esta Semana:";
-            this.bunifuLabel10.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuLabel10.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.ItensVencendo.AllowParentOverrides = false;
+            this.ItensVencendo.AutoEllipsis = false;
+            this.ItensVencendo.Cursor = System.Windows.Forms.Cursors.Default;
+            this.ItensVencendo.CursorType = System.Windows.Forms.Cursors.Default;
+            this.ItensVencendo.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ItensVencendo.ForeColor = System.Drawing.Color.OrangeRed;
+            this.ItensVencendo.Location = new System.Drawing.Point(5, 176);
+            this.ItensVencendo.Name = "ItensVencendo";
+            this.ItensVencendo.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.ItensVencendo.Size = new System.Drawing.Size(272, 21);
+            this.ItensVencendo.TabIndex = 18;
+            this.ItensVencendo.Text = "Quantidade de Itens Vencendo esta Semana:";
+            this.ItensVencendo.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ItensVencendo.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // bunifuLabel9
+            // OrcNo
             // 
-            this.bunifuLabel9.AllowParentOverrides = false;
-            this.bunifuLabel9.AutoEllipsis = false;
-            this.bunifuLabel9.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel9.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel9.Font = new System.Drawing.Font("Yu Gothic UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.bunifuLabel9.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.bunifuLabel9.Location = new System.Drawing.Point(913, 102);
-            this.bunifuLabel9.Name = "bunifuLabel9";
-            this.bunifuLabel9.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel9.Size = new System.Drawing.Size(213, 21);
-            this.bunifuLabel9.TabIndex = 17;
-            this.bunifuLabel9.Text = "Orçamentos Não-Aprovados:";
-            this.bunifuLabel9.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuLabel9.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.OrcNo.AllowParentOverrides = false;
+            this.OrcNo.AutoEllipsis = false;
+            this.OrcNo.Cursor = System.Windows.Forms.Cursors.Default;
+            this.OrcNo.CursorType = System.Windows.Forms.Cursors.Default;
+            this.OrcNo.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OrcNo.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.OrcNo.Location = new System.Drawing.Point(913, 102);
+            this.OrcNo.Name = "OrcNo";
+            this.OrcNo.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.OrcNo.Size = new System.Drawing.Size(174, 21);
+            this.OrcNo.TabIndex = 17;
+            this.OrcNo.Text = "Orçamentos Não-Aprovados:";
+            this.OrcNo.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.OrcNo.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // bunifuLabel8
+            // ValorEstq
             // 
-            this.bunifuLabel8.AllowParentOverrides = false;
-            this.bunifuLabel8.AutoEllipsis = false;
-            this.bunifuLabel8.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel8.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel8.Font = new System.Drawing.Font("Yu Gothic UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.bunifuLabel8.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.bunifuLabel8.Location = new System.Drawing.Point(544, 99);
-            this.bunifuLabel8.Name = "bunifuLabel8";
-            this.bunifuLabel8.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel8.Size = new System.Drawing.Size(173, 21);
-            this.bunifuLabel8.TabIndex = 16;
-            this.bunifuLabel8.Text = "Valor Total em Estoque:";
-            this.bunifuLabel8.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuLabel8.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.ValorEstq.AllowParentOverrides = false;
+            this.ValorEstq.AutoEllipsis = false;
+            this.ValorEstq.Cursor = System.Windows.Forms.Cursors.Default;
+            this.ValorEstq.CursorType = System.Windows.Forms.Cursors.Default;
+            this.ValorEstq.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ValorEstq.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.ValorEstq.Location = new System.Drawing.Point(544, 99);
+            this.ValorEstq.Name = "ValorEstq";
+            this.ValorEstq.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.ValorEstq.Size = new System.Drawing.Size(144, 21);
+            this.ValorEstq.TabIndex = 16;
+            this.ValorEstq.Text = "Valor Total em Estoque:";
+            this.ValorEstq.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ValorEstq.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // bunifuLabel7
+            // OrcYes
             // 
-            this.bunifuLabel7.AllowParentOverrides = false;
-            this.bunifuLabel7.AutoEllipsis = false;
-            this.bunifuLabel7.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel7.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel7.Font = new System.Drawing.Font("Yu Gothic UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.bunifuLabel7.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.bunifuLabel7.Location = new System.Drawing.Point(913, 66);
-            this.bunifuLabel7.Name = "bunifuLabel7";
-            this.bunifuLabel7.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel7.Size = new System.Drawing.Size(177, 21);
-            this.bunifuLabel7.TabIndex = 15;
-            this.bunifuLabel7.Text = "Orçamentos Aprovados:";
-            this.bunifuLabel7.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuLabel7.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.OrcYes.AllowParentOverrides = false;
+            this.OrcYes.AutoEllipsis = false;
+            this.OrcYes.Cursor = System.Windows.Forms.Cursors.Default;
+            this.OrcYes.CursorType = System.Windows.Forms.Cursors.Default;
+            this.OrcYes.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OrcYes.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.OrcYes.Location = new System.Drawing.Point(913, 66);
+            this.OrcYes.Name = "OrcYes";
+            this.OrcYes.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.OrcYes.Size = new System.Drawing.Size(146, 21);
+            this.OrcYes.TabIndex = 15;
+            this.OrcYes.Text = "Orçamentos Aprovados:";
+            this.OrcYes.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.OrcYes.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // bunifuLabel6
+            // OrcEspera
             // 
-            this.bunifuLabel6.AllowParentOverrides = false;
-            this.bunifuLabel6.AutoEllipsis = false;
-            this.bunifuLabel6.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel6.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel6.Font = new System.Drawing.Font("Yu Gothic UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.bunifuLabel6.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.bunifuLabel6.Location = new System.Drawing.Point(913, 33);
-            this.bunifuLabel6.Name = "bunifuLabel6";
-            this.bunifuLabel6.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel6.Size = new System.Drawing.Size(172, 21);
-            this.bunifuLabel6.TabIndex = 14;
-            this.bunifuLabel6.Text = "Orçamentos em Espera:";
-            this.bunifuLabel6.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuLabel6.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.OrcEspera.AllowParentOverrides = false;
+            this.OrcEspera.AutoEllipsis = false;
+            this.OrcEspera.Cursor = System.Windows.Forms.Cursors.Default;
+            this.OrcEspera.CursorType = System.Windows.Forms.Cursors.Default;
+            this.OrcEspera.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OrcEspera.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.OrcEspera.Location = new System.Drawing.Point(913, 33);
+            this.OrcEspera.Name = "OrcEspera";
+            this.OrcEspera.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.OrcEspera.Size = new System.Drawing.Size(146, 21);
+            this.OrcEspera.TabIndex = 14;
+            this.OrcEspera.Text = "Orçamentos em Espera:";
+            this.OrcEspera.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.OrcEspera.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // bunifuLabel5
+            // TotalGast
             // 
-            this.bunifuLabel5.AllowParentOverrides = false;
-            this.bunifuLabel5.AutoEllipsis = false;
-            this.bunifuLabel5.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel5.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel5.Font = new System.Drawing.Font("Yu Gothic UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.bunifuLabel5.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.bunifuLabel5.Location = new System.Drawing.Point(544, 66);
-            this.bunifuLabel5.Name = "bunifuLabel5";
-            this.bunifuLabel5.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel5.Size = new System.Drawing.Size(117, 21);
-            this.bunifuLabel5.TabIndex = 13;
-            this.bunifuLabel5.Text = "Total de Gastos:";
-            this.bunifuLabel5.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuLabel5.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.TotalGast.AllowParentOverrides = false;
+            this.TotalGast.AutoEllipsis = false;
+            this.TotalGast.Cursor = System.Windows.Forms.Cursors.Default;
+            this.TotalGast.CursorType = System.Windows.Forms.Cursors.Default;
+            this.TotalGast.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalGast.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.TotalGast.Location = new System.Drawing.Point(544, 66);
+            this.TotalGast.Name = "TotalGast";
+            this.TotalGast.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.TotalGast.Size = new System.Drawing.Size(98, 21);
+            this.TotalGast.TabIndex = 13;
+            this.TotalGast.Text = "Total de Gastos:";
+            this.TotalGast.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.TotalGast.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // bunifuLabel4
+            // TotalVendasHj
             // 
-            this.bunifuLabel4.AllowParentOverrides = false;
-            this.bunifuLabel4.AutoEllipsis = false;
-            this.bunifuLabel4.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel4.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel4.Font = new System.Drawing.Font("Yu Gothic UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.bunifuLabel4.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.bunifuLabel4.Location = new System.Drawing.Point(544, 33);
-            this.bunifuLabel4.Name = "bunifuLabel4";
-            this.bunifuLabel4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel4.Size = new System.Drawing.Size(158, 21);
-            this.bunifuLabel4.TabIndex = 12;
-            this.bunifuLabel4.Text = "Total de vendas Hoje:";
-            this.bunifuLabel4.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuLabel4.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.TotalVendasHj.AllowParentOverrides = false;
+            this.TotalVendasHj.AutoEllipsis = false;
+            this.TotalVendasHj.Cursor = System.Windows.Forms.Cursors.Default;
+            this.TotalVendasHj.CursorType = System.Windows.Forms.Cursors.Default;
+            this.TotalVendasHj.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalVendasHj.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.TotalVendasHj.Location = new System.Drawing.Point(544, 33);
+            this.TotalVendasHj.Name = "TotalVendasHj";
+            this.TotalVendasHj.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.TotalVendasHj.Size = new System.Drawing.Size(132, 21);
+            this.TotalVendasHj.TabIndex = 12;
+            this.TotalVendasHj.Text = "Total de vendas Hoje:";
+            this.TotalVendasHj.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.TotalVendasHj.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // bunifuLabel3
+            // QuantClienAt
             // 
-            this.bunifuLabel3.AllowParentOverrides = false;
-            this.bunifuLabel3.AutoEllipsis = false;
-            this.bunifuLabel3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel3.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel3.Font = new System.Drawing.Font("Yu Gothic UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.bunifuLabel3.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.bunifuLabel3.Location = new System.Drawing.Point(5, 99);
-            this.bunifuLabel3.Name = "bunifuLabel3";
-            this.bunifuLabel3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel3.Size = new System.Drawing.Size(224, 21);
-            this.bunifuLabel3.TabIndex = 11;
-            this.bunifuLabel3.Text = "Quantidade de Clientes Ativos:";
-            this.bunifuLabel3.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuLabel3.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.QuantClienAt.AllowParentOverrides = false;
+            this.QuantClienAt.AutoEllipsis = false;
+            this.QuantClienAt.Cursor = System.Windows.Forms.Cursors.Default;
+            this.QuantClienAt.CursorType = System.Windows.Forms.Cursors.Default;
+            this.QuantClienAt.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.QuantClienAt.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.QuantClienAt.Location = new System.Drawing.Point(5, 99);
+            this.QuantClienAt.Name = "QuantClienAt";
+            this.QuantClienAt.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.QuantClienAt.Size = new System.Drawing.Size(185, 21);
+            this.QuantClienAt.TabIndex = 11;
+            this.QuantClienAt.Text = "Quantidade de Clientes Ativos:";
+            this.QuantClienAt.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.QuantClienAt.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // bunifuLabel2
+            // QuantForn
             // 
-            this.bunifuLabel2.AllowParentOverrides = false;
-            this.bunifuLabel2.AutoEllipsis = false;
-            this.bunifuLabel2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel2.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel2.Font = new System.Drawing.Font("Yu Gothic UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.bunifuLabel2.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.bunifuLabel2.Location = new System.Drawing.Point(5, 66);
-            this.bunifuLabel2.Name = "bunifuLabel2";
-            this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel2.Size = new System.Drawing.Size(217, 21);
-            this.bunifuLabel2.TabIndex = 10;
-            this.bunifuLabel2.Text = "Quantidade de Fornecedores:";
-            this.bunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuLabel2.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.QuantForn.AllowParentOverrides = false;
+            this.QuantForn.AutoEllipsis = false;
+            this.QuantForn.Cursor = System.Windows.Forms.Cursors.Default;
+            this.QuantForn.CursorType = System.Windows.Forms.Cursors.Default;
+            this.QuantForn.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.QuantForn.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.QuantForn.Location = new System.Drawing.Point(5, 66);
+            this.QuantForn.Name = "QuantForn";
+            this.QuantForn.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.QuantForn.Size = new System.Drawing.Size(181, 21);
+            this.QuantForn.TabIndex = 10;
+            this.QuantForn.Text = "Quantidade de Fornecedores:";
+            this.QuantForn.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.QuantForn.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // bunifuLabel1
+            // ProdEstoq
             // 
-            this.bunifuLabel1.AllowParentOverrides = false;
-            this.bunifuLabel1.AutoEllipsis = false;
-            this.bunifuLabel1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel1.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel1.Font = new System.Drawing.Font("Yu Gothic UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.bunifuLabel1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.bunifuLabel1.Location = new System.Drawing.Point(5, 33);
-            this.bunifuLabel1.Name = "bunifuLabel1";
-            this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel1.Size = new System.Drawing.Size(274, 21);
-            this.bunifuLabel1.TabIndex = 9;
-            this.bunifuLabel1.Text = "Quantidade de Produtos em estoque:";
-            this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.ProdEstoq.AllowParentOverrides = false;
+            this.ProdEstoq.AutoEllipsis = false;
+            this.ProdEstoq.Cursor = System.Windows.Forms.Cursors.Default;
+            this.ProdEstoq.CursorType = System.Windows.Forms.Cursors.Default;
+            this.ProdEstoq.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProdEstoq.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.ProdEstoq.Location = new System.Drawing.Point(5, 33);
+            this.ProdEstoq.Name = "ProdEstoq";
+            this.ProdEstoq.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.ProdEstoq.Size = new System.Drawing.Size(226, 21);
+            this.ProdEstoq.TabIndex = 9;
+            this.ProdEstoq.Text = "Quantidade de Produtos em estoque:";
+            this.ProdEstoq.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ProdEstoq.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // radGroupBox2
             // 
             this.radGroupBox2.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
             this.radGroupBox2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.radGroupBox2.Controls.Add(this.btAprovarOrcamentos);
             this.radGroupBox2.Controls.Add(this.lbMsg2);
             this.radGroupBox2.Controls.Add(this.btVendas);
             this.radGroupBox2.Controls.Add(this.btOrcamentos);
@@ -841,7 +846,7 @@
             this.radGroupBox2.HeaderText = "Atendimento";
             this.radGroupBox2.Location = new System.Drawing.Point(650, 12);
             this.radGroupBox2.Name = "radGroupBox2";
-            this.radGroupBox2.Size = new System.Drawing.Size(368, 153);
+            this.radGroupBox2.Size = new System.Drawing.Size(395, 153);
             this.radGroupBox2.TabIndex = 5;
             this.radGroupBox2.Text = "Atendimento";
             this.radGroupBox2.ThemeName = "Aqua";
@@ -855,7 +860,7 @@
             this.lbMsg2.CursorType = System.Windows.Forms.Cursors.Default;
             this.lbMsg2.Font = new System.Drawing.Font("Yu Gothic UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.lbMsg2.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lbMsg2.Location = new System.Drawing.Point(27, 121);
+            this.lbMsg2.Location = new System.Drawing.Point(56, 121);
             this.lbMsg2.Name = "lbMsg2";
             this.lbMsg2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lbMsg2.Size = new System.Drawing.Size(278, 27);
@@ -885,11 +890,11 @@
             this.btVendas.ColorContrastOnClick = 45;
             this.btVendas.ColorContrastOnHover = 45;
             this.btVendas.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges13.BottomLeft = true;
-            borderEdges13.BottomRight = true;
-            borderEdges13.TopLeft = true;
-            borderEdges13.TopRight = true;
-            this.btVendas.CustomizableEdges = borderEdges13;
+            borderEdges7.BottomLeft = true;
+            borderEdges7.BottomRight = true;
+            borderEdges7.TopLeft = true;
+            borderEdges7.TopRight = true;
+            this.btVendas.CustomizableEdges = borderEdges7;
             this.btVendas.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btVendas.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btVendas.DisabledFillColor = System.Drawing.Color.Empty;
@@ -915,7 +920,7 @@
             this.btVendas.IdleIconLeftImage = ((System.Drawing.Image)(resources.GetObject("btVendas.IdleIconLeftImage")));
             this.btVendas.IdleIconRightImage = null;
             this.btVendas.IndicateFocus = true;
-            this.btVendas.Location = new System.Drawing.Point(206, 33);
+            this.btVendas.Location = new System.Drawing.Point(248, 33);
             this.btVendas.Name = "btVendas";
             this.btVendas.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btVendas.OnDisabledState.BorderRadius = 82;
@@ -957,6 +962,7 @@
             this.btVendas.TextMarginLeft = 0;
             this.btVendas.TextPadding = new System.Windows.Forms.Padding(0);
             this.btVendas.UseDefaultRadiusAndThickness = true;
+            this.btVendas.Click += new System.EventHandler(this.btVendas_Click);
             // 
             // btOrcamentos
             // 
@@ -978,11 +984,11 @@
             this.btOrcamentos.ColorContrastOnClick = 45;
             this.btOrcamentos.ColorContrastOnHover = 45;
             this.btOrcamentos.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges14.BottomLeft = true;
-            borderEdges14.BottomRight = true;
-            borderEdges14.TopLeft = true;
-            borderEdges14.TopRight = true;
-            this.btOrcamentos.CustomizableEdges = borderEdges14;
+            borderEdges8.BottomLeft = true;
+            borderEdges8.BottomRight = true;
+            borderEdges8.TopLeft = true;
+            borderEdges8.TopRight = true;
+            this.btOrcamentos.CustomizableEdges = borderEdges8;
             this.btOrcamentos.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btOrcamentos.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btOrcamentos.DisabledFillColor = System.Drawing.Color.Empty;
@@ -1008,7 +1014,7 @@
             this.btOrcamentos.IdleIconLeftImage = ((System.Drawing.Image)(resources.GetObject("btOrcamentos.IdleIconLeftImage")));
             this.btOrcamentos.IdleIconRightImage = null;
             this.btOrcamentos.IndicateFocus = true;
-            this.btOrcamentos.Location = new System.Drawing.Point(75, 33);
+            this.btOrcamentos.Location = new System.Drawing.Point(29, 33);
             this.btOrcamentos.Name = "btOrcamentos";
             this.btOrcamentos.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btOrcamentos.OnDisabledState.BorderRadius = 82;
@@ -1050,6 +1056,118 @@
             this.btOrcamentos.TextMarginLeft = 0;
             this.btOrcamentos.TextPadding = new System.Windows.Forms.Padding(0);
             this.btOrcamentos.UseDefaultRadiusAndThickness = true;
+            this.btOrcamentos.Click += new System.EventHandler(this.btOrcamentos_Click);
+            // 
+            // btAprovarOrcamentos
+            // 
+            this.btAprovarOrcamentos.AllowAnimations = true;
+            this.btAprovarOrcamentos.AllowMouseEffects = true;
+            this.btAprovarOrcamentos.AllowToggling = true;
+            this.btAprovarOrcamentos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btAprovarOrcamentos.AnimationSpeed = 200;
+            this.btAprovarOrcamentos.AutoGenerateColors = false;
+            this.btAprovarOrcamentos.AutoRoundBorders = true;
+            this.btAprovarOrcamentos.AutoSizeLeftIcon = true;
+            this.btAprovarOrcamentos.AutoSizeRightIcon = true;
+            this.btAprovarOrcamentos.BackColor = System.Drawing.Color.Transparent;
+            this.btAprovarOrcamentos.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(122)))), ((int)(((byte)(183)))));
+            this.btAprovarOrcamentos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btAprovarOrcamentos.BackgroundImage")));
+            this.btAprovarOrcamentos.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
+            this.btAprovarOrcamentos.ButtonText = "";
+            this.btAprovarOrcamentos.ButtonTextMarginLeft = 0;
+            this.btAprovarOrcamentos.ColorContrastOnClick = 45;
+            this.btAprovarOrcamentos.ColorContrastOnHover = 45;
+            this.btAprovarOrcamentos.Cursor = System.Windows.Forms.Cursors.Default;
+            borderEdges6.BottomLeft = true;
+            borderEdges6.BottomRight = true;
+            borderEdges6.TopLeft = true;
+            borderEdges6.TopRight = true;
+            this.btAprovarOrcamentos.CustomizableEdges = borderEdges6;
+            this.btAprovarOrcamentos.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btAprovarOrcamentos.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btAprovarOrcamentos.DisabledFillColor = System.Drawing.Color.Empty;
+            this.btAprovarOrcamentos.DisabledForecolor = System.Drawing.Color.Empty;
+            this.btAprovarOrcamentos.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.ButtonStates.Pressed;
+            this.btAprovarOrcamentos.Font = new System.Drawing.Font("Book Antiqua", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btAprovarOrcamentos.ForeColor = System.Drawing.Color.Teal;
+            this.btAprovarOrcamentos.IconLeft = ((System.Drawing.Image)(resources.GetObject("btAprovarOrcamentos.IconLeft")));
+            this.btAprovarOrcamentos.IconLeftAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btAprovarOrcamentos.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.btAprovarOrcamentos.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.btAprovarOrcamentos.IconMarginLeft = 11;
+            this.btAprovarOrcamentos.IconPadding = 10;
+            this.btAprovarOrcamentos.IconRight = null;
+            this.btAprovarOrcamentos.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btAprovarOrcamentos.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.btAprovarOrcamentos.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.btAprovarOrcamentos.IconSize = 25;
+            this.btAprovarOrcamentos.IdleBorderColor = System.Drawing.Color.Empty;
+            this.btAprovarOrcamentos.IdleBorderRadius = 0;
+            this.btAprovarOrcamentos.IdleBorderThickness = 0;
+            this.btAprovarOrcamentos.IdleFillColor = System.Drawing.Color.Empty;
+            this.btAprovarOrcamentos.IdleIconLeftImage = ((System.Drawing.Image)(resources.GetObject("btAprovarOrcamentos.IdleIconLeftImage")));
+            this.btAprovarOrcamentos.IdleIconRightImage = null;
+            this.btAprovarOrcamentos.IndicateFocus = true;
+            this.btAprovarOrcamentos.Location = new System.Drawing.Point(134, 33);
+            this.btAprovarOrcamentos.Name = "btAprovarOrcamentos";
+            this.btAprovarOrcamentos.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btAprovarOrcamentos.OnDisabledState.BorderRadius = 82;
+            this.btAprovarOrcamentos.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
+            this.btAprovarOrcamentos.OnDisabledState.BorderThickness = 1;
+            this.btAprovarOrcamentos.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btAprovarOrcamentos.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btAprovarOrcamentos.OnDisabledState.IconLeftImage = null;
+            this.btAprovarOrcamentos.OnDisabledState.IconRightImage = null;
+            this.btAprovarOrcamentos.onHoverState.BorderColor = System.Drawing.Color.Transparent;
+            this.btAprovarOrcamentos.onHoverState.BorderRadius = 82;
+            this.btAprovarOrcamentos.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
+            this.btAprovarOrcamentos.onHoverState.BorderThickness = 1;
+            this.btAprovarOrcamentos.onHoverState.FillColor = System.Drawing.Color.Transparent;
+            this.btAprovarOrcamentos.onHoverState.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.btAprovarOrcamentos.onHoverState.IconLeftImage = null;
+            this.btAprovarOrcamentos.onHoverState.IconRightImage = null;
+            this.btAprovarOrcamentos.OnIdleState.BorderColor = System.Drawing.Color.Transparent;
+            this.btAprovarOrcamentos.OnIdleState.BorderRadius = 82;
+            this.btAprovarOrcamentos.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
+            this.btAprovarOrcamentos.OnIdleState.BorderThickness = 1;
+            this.btAprovarOrcamentos.OnIdleState.FillColor = System.Drawing.Color.Transparent;
+            this.btAprovarOrcamentos.OnIdleState.ForeColor = System.Drawing.Color.Teal;
+            this.btAprovarOrcamentos.OnIdleState.IconLeftImage = ((System.Drawing.Image)(resources.GetObject("bunifuButton21.OnIdleState.IconLeftImage")));
+            this.btAprovarOrcamentos.OnIdleState.IconRightImage = null;
+            this.btAprovarOrcamentos.OnPressedState.BorderColor = System.Drawing.Color.Transparent;
+            this.btAprovarOrcamentos.OnPressedState.BorderRadius = 82;
+            this.btAprovarOrcamentos.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
+            this.btAprovarOrcamentos.OnPressedState.BorderThickness = 1;
+            this.btAprovarOrcamentos.OnPressedState.FillColor = System.Drawing.Color.Transparent;
+            this.btAprovarOrcamentos.OnPressedState.ForeColor = System.Drawing.Color.DimGray;
+            this.btAprovarOrcamentos.OnPressedState.IconLeftImage = null;
+            this.btAprovarOrcamentos.OnPressedState.IconRightImage = null;
+            this.btAprovarOrcamentos.Size = new System.Drawing.Size(99, 82);
+            this.btAprovarOrcamentos.TabIndex = 9;
+            this.btAprovarOrcamentos.TabStop = false;
+            this.btAprovarOrcamentos.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btAprovarOrcamentos.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btAprovarOrcamentos.TextMarginLeft = 0;
+            this.btAprovarOrcamentos.TextPadding = new System.Windows.Forms.Padding(0);
+            this.btAprovarOrcamentos.UseDefaultRadiusAndThickness = true;
+            this.btAprovarOrcamentos.Click += new System.EventHandler(this.btAprovarOrcamentos_Click);
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.AllowParentOverrides = false;
+            this.lblStatus.AutoEllipsis = false;
+            this.lblStatus.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblStatus.CursorType = System.Windows.Forms.Cursors.Default;
+            this.lblStatus.Font = new System.Drawing.Font("Yu Gothic UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.lblStatus.ForeColor = System.Drawing.Color.OrangeRed;
+            this.lblStatus.Location = new System.Drawing.Point(5, 248);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblStatus.Size = new System.Drawing.Size(102, 21);
+            this.lblStatus.TabIndex = 20;
+            this.lblStatus.Text = "Carregando....";
+            this.lblStatus.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblStatus.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // Geral
             // 
@@ -1110,16 +1228,18 @@
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btOrcamentos;
         private Bunifu.UI.WinForms.BunifuLabel lbMsg2;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btVendas;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel3;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel2;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel1;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel5;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel4;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel9;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel8;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel7;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel6;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel11;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel10;
+        private Bunifu.UI.WinForms.BunifuLabel QuantClienAt;
+        private Bunifu.UI.WinForms.BunifuLabel QuantForn;
+        private Bunifu.UI.WinForms.BunifuLabel ProdEstoq;
+        private Bunifu.UI.WinForms.BunifuLabel TotalGast;
+        private Bunifu.UI.WinForms.BunifuLabel TotalVendasHj;
+        private Bunifu.UI.WinForms.BunifuLabel OrcNo;
+        private Bunifu.UI.WinForms.BunifuLabel ValorEstq;
+        private Bunifu.UI.WinForms.BunifuLabel OrcYes;
+        private Bunifu.UI.WinForms.BunifuLabel OrcEspera;
+        private Bunifu.UI.WinForms.BunifuLabel ItensPromo;
+        private Bunifu.UI.WinForms.BunifuLabel ItensVencendo;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btAprovarOrcamentos;
+        private Bunifu.UI.WinForms.BunifuLabel lblStatus;
     }
 }

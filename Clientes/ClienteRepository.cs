@@ -212,6 +212,33 @@ namespace Acessos
                 Ativo = reader.GetBoolean(reader.GetOrdinal("Ativo"))
             };
         }
+        public async Task<List<ICliente>> BuscarClientesAsync(string filtro = null)
+        {
+            var clientes = new List<ICliente>();
+            var sql = @"SELECT ID, Nome, CPFCNPJ, DataNascimento, Endereco, Numero, Telefone, RendaDeclarada,
+            CEP, Logradouro, Bairro, Localidade, UF, Estado, Regiao, IBGE, Complemento,
+            DataCadastro, UltimaModificacao, Ativo FROM Clientes WHERE Ativo = 1";
+            if (!string.IsNullOrWhiteSpace(filtro))
+                sql += " AND (Nome LIKE @filtro OR CPFCNPJ LIKE @filtro)";
+
+            using (var connection = new SqlConnection(_connectionString))
+            using (var command = new SqlCommand(sql, connection))
+            {
+                if (!string.IsNullOrWhiteSpace(filtro))
+                    command.Parameters.AddWithValue("@filtro", "%" + filtro + "%");
+
+                await connection.OpenAsync();
+                using (var reader = await command.ExecuteReaderAsync())
+                {
+                    while (await reader.ReadAsync())
+                    {
+                        clientes.Add(MapearCliente(reader));
+                    }
+                }
+            }
+            return clientes;
+        }
+
     }
 
 }

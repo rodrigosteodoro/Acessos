@@ -142,6 +142,51 @@
     <Compile Include="Importacao\SelecionarAcao.Designer.cs">
       <DependentUpon>SelecionarAcao.cs</DependentUpon>
     </Compile>
+    <Compile Include="Orcamentos\frmAprovacoesOrcamentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Orcamentos\frmAprovacoesOrcamentos.Designer.cs">
+      <DependentUpon>frmAprovacoesOrcamentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Orcamentos\frmHistoricoOrcamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Orcamentos\frmHistoricoOrcamento.Designer.cs">
+      <DependentUpon>frmHistoricoOrcamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Orcamentos\frmOrcamentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Orcamentos\frmOrcamentos.Designer.cs">
+      <DependentUpon>frmOrcamentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Orcamentos\frmPesquisaOrcamentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Orcamentos\frmPesquisaOrcamentos.Designer.cs">
+      <DependentUpon>frmPesquisaOrcamentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Orcamentos\frmVisualizarOrcamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Orcamentos\frmVisualizarOrcamento.Designer.cs">
+      <DependentUpon>frmVisualizarOrcamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Orcamentos\IItemOrcamento.cs" />
+    <Compile Include="Orcamentos\IOrcamento.cs" />
+    <Compile Include="Orcamentos\IOrcamentoRepository.cs" />
+    <Compile Include="Orcamentos\ObservacaoAprovacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Orcamentos\ObservacaoAprovacao.Designer.cs">
+      <DependentUpon>ObservacaoAprovacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Orcamentos\OrcamentoAprovacao.cs" />
+    <Compile Include="Orcamentos\OrcamentoAprovacaoModel.cs" />
+    <Compile Include="Orcamentos\Orcamento.cs" />
+    <Compile Include="Orcamentos\OrcamentoHistorico.cs" />
+    <Compile Include="Orcamentos\IOrcamentoHistorico.cs" />
+    <Compile Include="Orcamentos\OrcamentoRepository.cs" />
     <Compile Include="Produtos\frmEdicaoP.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -193,6 +238,7 @@
     <Compile Include="Usuarios\Usuariosfrm.Designer.cs">
       <DependentUpon>Usuariosfrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utils\RelatorioMsg.cs" />
     <Compile Include="Utils\Validador.cs" />
     <EmbeddedResource Include="Clientes\FormSelecaoCliente.resx">
       <DependentUpon>FormSelecaoCliente.cs</DependentUpon>
@@ -214,6 +260,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Importacao\SelecionarAcao.resx">
       <DependentUpon>SelecionarAcao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Orcamentos\frmAprovacoesOrcamentos.resx">
+      <DependentUpon>frmAprovacoesOrcamentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Orcamentos\frmHistoricoOrcamento.resx">
+      <DependentUpon>frmHistoricoOrcamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Orcamentos\frmOrcamentos.resx">
+      <DependentUpon>frmOrcamentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Orcamentos\frmPesquisaOrcamentos.resx">
+      <DependentUpon>frmPesquisaOrcamentos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Produtos\frmEdicaoP.resx">
       <DependentUpon>frmEdicaoP.cs</DependentUpon>
@@ -266,6 +324,12 @@
     </PackageReference>
     <PackageReference Include="EPPlus">
       <Version>8.0.7</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualBasic">
+      <Version>10.3.0</Version>
+    </PackageReference>
+    <PackageReference Include="PDFsharp-MigraDoc-gdi">
+      <Version>6.2.0</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>

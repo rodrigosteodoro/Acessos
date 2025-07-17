@@ -92,9 +92,9 @@ namespace Acessos
             // 
             this.txtPesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPesquisa.Location = new System.Drawing.Point(57, 9);
+            this.txtPesquisa.Location = new System.Drawing.Point(86, 9);
             this.txtPesquisa.Name = "txtPesquisa";
-            this.txtPesquisa.Size = new System.Drawing.Size(621, 20);
+            this.txtPesquisa.Size = new System.Drawing.Size(592, 20);
             this.txtPesquisa.TabIndex = 3;
             // 
             // label1
